@@ -7,10 +7,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
@@ -64,12 +66,14 @@ fun NavDrawer() {
         gesturesEnabled = true,
         drawerContent = {
             ModalDrawerSheet(
-                modifier = Modifier.width(LocalConfiguration.current.screenWidthDp.dp * 0.6f)
+                modifier = Modifier.width(LocalConfiguration.current.screenWidthDp.dp * 0.65f)
             ) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(50.dp)
+                        .height(200.dp)
+                        .background(Color(193, 152, 250))
+                        .padding(top = 0.dp)
                 ) {
                     Text(text = "")
                 }
@@ -137,7 +141,9 @@ fun NavDrawer() {
                 )
             }
         ) {
-            NavigationHost(navController = navigationController)
+            NavigationHost(
+                navController = navigationController,
+            )
         }
     }
 }

@@ -1,10 +1,7 @@
 package com.example.vigiform.navigation
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Call
-import androidx.compose.material.icons.filled.Create
-import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.ui.graphics.vector.ImageVector
 
 data class Item(
@@ -17,9 +14,13 @@ data class Item(
 
 object Items {
     val items = arrayOf(
-        Item("Ley Ohm", false, Icons.Default.Home, "LeyOhm", Routes.LeyOhm.route),
-        Item("Ensilar", false, Icons.Default.Person, "Ensilar", Routes.Ensilar.route),
-        Item("Energia Cinetica", false, Icons.Default.Create, "EnergiaCinetica", Routes.EnergiaCinetica.route),
-        Item("Densidad", false, Icons.Default.Call, "Densidad", Routes.Densidad.route)
+        Item("Ley Ohm", false, Electric_bolt, "LeyOhm", Routes.LeyOhm.route),
+        Item("Ensilar", false, Dog, "Ensilar", Routes.Ensilar.route),
+        Item("Energia Cinetica", false, TestTubeDiagonal, "EnergiaCinetica", Routes.EnergiaCinetica.route),
+        Item("Densidad", false, FlaskConical, "Densidad", Routes.Densidad.route),
+        Item("Acerca de", false, Icons.Default.Info, "Densidad", Routes.Densidad.route)
     )
 }
+
+
+
