@@ -12,7 +12,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
@@ -66,14 +66,15 @@ fun NavDrawer() {
         gesturesEnabled = true,
         drawerContent = {
             ModalDrawerSheet(
-                modifier = Modifier.width(LocalConfiguration.current.screenWidthDp.dp * 0.65f)
+                modifier = Modifier
+                    .width(LocalConfiguration.current.screenWidthDp.dp * 0.65f)
+                    .statusBarsPadding() // Asegura que el drawer se extienda debajo de la barra de estado
             ) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(200.dp)
                         .background(Color(193, 152, 250))
-                        .padding(top = 0.dp)
                 ) {
                     Text(text = "")
                 }

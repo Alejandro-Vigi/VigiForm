@@ -7,5 +7,5 @@ sealed class Routes (
     data object EnergiaCinetica: Routes("energiaCinetica")
     data object Ensilar: Routes("ensilar")
     data object Densidad: Routes("densidad")
-
+    data object AcercaDe: Routes("acercaDe")
 }

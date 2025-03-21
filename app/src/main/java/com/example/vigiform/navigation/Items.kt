@@ -18,7 +18,7 @@ object Items {
         Item("Ensilar", false, Dog, "Ensilar", Routes.Ensilar.route),
         Item("Energia Cinetica", false, TestTubeDiagonal, "EnergiaCinetica", Routes.EnergiaCinetica.route),
         Item("Densidad", false, FlaskConical, "Densidad", Routes.Densidad.route),
-        Item("Acerca de", false, Icons.Default.Info, "Densidad", Routes.Densidad.route)
+        Item("Acerca de", false, Icons.Default.Info, "Densidad", Routes.AcercaDe.route)
     )
 }
 
