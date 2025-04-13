@@ -1,8 +1,10 @@
 package com.example.vigiform.navigation
 
+import android.content.Context
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.ui.graphics.vector.ImageVector
+import com.example.vigiform.R
 
 /**
  * ES: Item es una clase de datos que representa un ítem en una lista de navegación.
@@ -30,12 +32,24 @@ data class Item(
  * in the navigation drawer or menu. Each entry represents a different section of the app.
  */
 
+object ItemNames {
+    fun getOhmsLaw(context: Context): String { return context.getString(R.string.OhmsLaw) }
+    fun getOhmsLaw2(context: Context): String { return context.getString(R.string.Ohms_Law) }
+    fun getDosage(context: Context): String { return context.getString(R.string.Dosage) }
+    fun getKineticEnergy(context: Context): String { return context.getString(R.string.KineticEnergy) }
+    fun getKineticEnergy2(context: Context): String { return context.getString(R.string.Kinetic_Energy) }
+    fun getDensity(context: Context): String { return context.getString(R.string.Density) }
+    fun getAbout(context: Context): String { return context.getString(R.string.About) }
+}
+
 object Items {
-    val items = arrayOf(
-        Item("Ohms Law", false, Electric_bolt, "OhmsLaw", Routes.OhmsLaw.route),
-        Item("Dosage", false, Dog, "Dosage", Routes.Dosage.route),
-        Item("Kinetic Energy", false, TestTubeDiagonal, "KineticEnergy", Routes.KineticEnergy.route),
-        Item("Density", false, FlaskConical, "Density", Routes.Density.route),
-        Item("About", false, Icons.Default.Info, "About", Routes.About.route)
-    )
+    fun getItems(context: Context): Array<Item> {
+        return arrayOf(
+            Item(ItemNames.getOhmsLaw(context), false, getElectricBoltImage(context), ItemNames.getOhmsLaw2(context), Routes.OhmsLaw.route),
+            Item(ItemNames.getDosage(context), false, getDogImage(context), ItemNames.getDosage(context), Routes.Dosage.route),
+            Item(ItemNames.getKineticEnergy(context), false, getTestTubeDiagonalImage(context), ItemNames.getKineticEnergy2(context), Routes.KineticEnergy.route),
+            Item(ItemNames.getDensity(context), false, getFlaskConical(context), ItemNames.getDensity(context), Routes.Density.route),
+            Item(ItemNames.getAbout(context), false, Icons.Default.Info, ItemNames.getAbout(context), Routes.About.route)
+        )
+    }
 }

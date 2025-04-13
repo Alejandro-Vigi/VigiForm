@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">VigiForm</string>
+
+    <!-- Items.kt -->
+    <string name="OhmsLaw">Ohms Law</string>
+    <string name="Dosage">Dosage</string>
+    <string name="KineticEnergy">Kinetic Energy</string>
+    <string name="Density">Density</string>
+    <string name="About">About</string>
+    <string name="Ohms_Law">OhmsLaw</string>
+    <string name="Kinetic_Energy">KineticEnergy</string>
+
+    <!-- Icons.kt -->
+    <string name="Dog">Dog</string>
+    <string name="ElectricBolt">Electric_bolt</string>
+    <string name="TestTubeDiagonal">TestTubeDiagonal</string>
+    <string name="FlaskConical">FlaskConical</string>
+    <string name="Instagram">Instagram</string>
+    <string name="Linkedin">LinkedinLogo</string>
+    <string name="Github">Github</string>
+
 </resources>

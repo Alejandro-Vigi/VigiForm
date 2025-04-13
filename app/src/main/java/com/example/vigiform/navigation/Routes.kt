@@ -13,6 +13,16 @@ package com.example.vigiform.navigation
 sealed class Routes (
     val route: String
 ) {
+    /*
+    ES: No lo considero como hardcoding negativo ya que estas rutas son identificadores internos utilizados por el sistema de navegación.
+    * No se muestran al usuario, no cambian con el idioma, y deben ser estables para mantener la integridad de la navegación.
+    * Moverlas a strings.xml no aportaría beneficios y solo complicaría el código innecesariamente.
+
+    EN: This is not considered bad hardcoding since these routes are internal identifiers used by the navigation system.
+    * They are not user-facing, do not change based on language, and need to remain stable to ensure navigation integrity.
+    * Moving them to strings.xml would add unnecessary complexity without any practical benefit.
+    */
+
     data object OhmsLaw: Routes("ohmsLaw")
     data object KineticEnergy: Routes("kineticEnergy")
     data object Dosage: Routes("dosage")

@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.vigiform.navigation.Instagram
+import com.example.vigiform.navigation.getInstagram
 import androidx.compose.foundation.clickable
 import androidx.compose.ui.platform.LocalContext
 import android.content.Intent
@@ -24,10 +24,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.ui.res.painterResource
-import com.example.vigiform.navigation.Github
 import androidx.core.net.toUri
-import com.example.vigiform.navigation.LinkedinLogo
+import com.example.vigiform.navigation.getLinkedinLogo
 import com.example.vigiform.R
+import com.example.vigiform.navigation.getGithub
 
 /**
  * ES: AboutScreen es una función composable que representa una pantalla de información dentro de la
@@ -97,7 +97,7 @@ fun AboutScreen() {
                 horizontalArrangement = Arrangement.spacedBy(16.dp),
             ) {
                 Icon(
-                    imageVector = Instagram,
+                    imageVector = getInstagram(context),
                     contentDescription = "Instagram Icon",
                     modifier = Modifier
                         .size(40.dp)
@@ -110,7 +110,7 @@ fun AboutScreen() {
                 )
                 Spacer(modifier = Modifier.height(20.dp))
                 Icon(
-                    imageVector = LinkedinLogo,
+                    imageVector = getLinkedinLogo(context),
                     contentDescription = "LinkedIn Icon",
                     modifier = Modifier
                         .size(40.dp)
@@ -123,7 +123,7 @@ fun AboutScreen() {
                 )
                 Spacer(modifier = Modifier.height(20.dp))
                 Icon(
-                    imageVector = Github,
+                    imageVector = getGithub(context),
                     contentDescription = "Github Icon",
                     modifier = Modifier
                         .size(40.dp)

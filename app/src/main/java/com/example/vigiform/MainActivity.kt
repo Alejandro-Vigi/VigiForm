@@ -57,6 +57,8 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavDrawer() {
+    val context = LocalContext.current
+    val items = Items.getItems(context)
     val navigationController = rememberNavController()
     val coroutineScope = rememberCoroutineScope()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -81,7 +83,7 @@ fun NavDrawer() {
 
                 Spacer(modifier = Modifier.height(20.dp))
 
-                for (item in Items.items) {
+                for (item in items) {
                     DrawerItems(
                         label = item.label,
                         selected = item.selected,
