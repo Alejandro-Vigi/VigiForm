@@ -33,6 +33,20 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalFocusManager
 import java.util.Locale
 
+/**
+ * ES: DensityScreen es una función composable que permite al usuario calcular la densidad de un objeto
+ * a partir de su masa y volumen. La fórmula utilizada es: ρ = m / V, donde ρ es la densidad, m es la masa
+ * y V es el volumen. La pantalla tiene campos para ingresar la masa y el volumen, y muestra el resultado
+ * de la densidad o un mensaje de error si faltan datos o hay errores en el cálculo. También se incluye un
+ * botón para realizar el cálculo.
+ *
+ * EN: DensityScreen is a composable function that allows the user to calculate the density of an object
+ * based on its mass and volume. The formula used is: ρ = m / V, where ρ is the density, m is the mass,
+ * and V is the volume. The screen has fields to enter the mass and volume, and displays the result of the
+ * density or an error message if data is missing or there are calculation errors. There is also a button
+ * to perform the calculation.
+ */
+
 @Composable
 fun DensityScreen() {
     val focusManager = LocalFocusManager.current
@@ -148,7 +162,6 @@ fun DensityScreen() {
                 modifier = Modifier.fillMaxWidth()
             )
 
-            // Mostrar error o resultado de la densidad
             Spacer(modifier = Modifier.height(20.dp))
 
             density.let {
@@ -205,7 +218,6 @@ fun DensityScreen() {
 
             Spacer(modifier = Modifier.height(5.dp))
 
-            // Botón para calcular la densidad
             Button(
                 onClick = {
                     val masaValue = mass.toFloatOrNull()
@@ -234,4 +246,3 @@ fun DensityScreen() {
         }
     }
 }
-

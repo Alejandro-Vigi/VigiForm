@@ -29,6 +29,19 @@ import androidx.core.net.toUri
 import com.example.vigiform.navigation.LinkedinLogo
 import com.example.vigiform.R
 
+/**
+ * ES: AboutScreen es una función composable que representa una pantalla de información dentro de la
+ * aplicación. Muestra detalles sobre el creador de la app (Marco Alejandro Vigi Garduño), incluyendo nombre, la facultad y la versión
+ * de la aplicación. También muestra los íconos de las redes sociales como Instagram, LinkedIn y GitHub,
+ * que al hacer clic redirigen al usuario a los perfiles correspondientes. Utiliza un diseño de Columnas
+ * y Filas, con imágenes y textos alineados adecuadamente en la pantalla.
+ *
+ * EN: AboutScreen is a composable function that represents an information screen within the app. It displays
+ * details about the app creator, including their name (Marco Alejandro Vigi Garduño), the faculty, and the app version. It also shows social media
+ * icons for Instagram, LinkedIn, and GitHub, which, when clicked, redirect the user to the corresponding profiles.
+ * The layout uses Columns and Rows, with images and text properly aligned on the screen.
+ */
+
 @Composable
 fun AboutScreen() {
     val context = LocalContext.current

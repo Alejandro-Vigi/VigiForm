@@ -31,6 +31,21 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.style.TextAlign
 
+/**
+ * ES: OhmsLawScreen es una función composable que permite al usuario calcular diferentes variables de la Ley de Ohm:
+ * el voltaje (V), la corriente (I) o la resistencia (R), dependiendo de la fórmula seleccionada. Las fórmulas disponibles
+ * son: V = I × R, I = V / R y R = V / I. La pantalla tiene campos de entrada para ingresar los valores necesarios y muestra
+ * el resultado o un mensaje de error si faltan datos o si hay un error en el cálculo, como cuando la resistencia o la corriente
+ * son cero, lo que causaría una división por cero. La pantalla también incluye un botón para realizar el cálculo y mostrar
+ * los resultados o mensajes de error específicos.
+ *
+ * EN: OhmsLawScreen is a composable function that allows the user to calculate different variables of Ohm's Law:
+ * voltage (V), current (I), or resistance (R), depending on the selected formula. The available formulas are:
+ * V = I × R, I = V / R, and R = V / I. The screen has input fields to enter the necessary values and displays the result
+ * or an error message if data is missing or if there is an error in the calculation, such as when resistance or current
+ * are zero, which would cause a division by zero. The screen also includes a button to perform the calculation and display
+ * the results or specific error messages.
+ */
 
 @Composable
 fun OhmsLawScreen() {
@@ -86,7 +101,6 @@ fun OhmsLawScreen() {
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        // Campos según fórmula seleccionada
         when (selectedForm) {
             "V = I × R" -> {
                 TextField(
@@ -228,7 +242,6 @@ fun OhmsLawScreen() {
             }
         }
 
-        // Botón de calcular
         Button(
             onClick = {
                 val voltageValue = voltage.toFloatOrNull()

@@ -34,6 +34,22 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.util.Locale
 
+/**
+ * ES: KineticEnergyScreen es una función composable que permite al usuario calcular la energía cinética de un objeto
+ * a partir de su masa y velocidad. La fórmula utilizada es: Eₖ = 1/2 * m * v², donde Eₖ es la energía cinética en julios,
+ * m es la masa del objeto en kilogramos y v es la velocidad del objeto en metros por segundo. La pantalla tiene campos
+ * para ingresar la masa y la velocidad, y muestra el resultado de la energía cinética o un mensaje de error si faltan
+ * datos o hay errores en el cálculo, como cuando uno o ambos campos están vacíos. También incluye un botón para realizar
+ * el cálculo y mostrar los resultados o los mensajes de error específicos.
+ *
+ * EN: KineticEnergyScreen is a composable function that allows the user to calculate the kinetic energy of an object
+ * based on its mass and velocity. The formula used is: Eₖ = 1/2 * m * v², where Eₖ is the kinetic energy in joules,
+ * m is the object's mass in kilograms, and v is the object's velocity in meters per second. The screen has fields to
+ * input the mass and velocity, and displays the result of the kinetic energy or an error message if data is missing
+ * or there are calculation errors, such as when one or both fields are empty. It also includes a button to perform
+ * the calculation and display the results or specific error messages.
+ */
+
 @Composable
 fun KineticEnergyScreen() {
     val focusManager = LocalFocusManager.current
@@ -151,7 +167,6 @@ fun KineticEnergyScreen() {
                 modifier = Modifier.fillMaxWidth()
             )
 
-            // Mostrar error o resultado de la densidad
             Spacer(modifier = Modifier.height(20.dp))
 
             result.let {
@@ -199,7 +214,6 @@ fun KineticEnergyScreen() {
 
             Spacer(modifier = Modifier.height(5.dp))
 
-            // Botón para calcular la densidad
             Button(
                 onClick = {
                     val masaValue = mass.toFloatOrNull()

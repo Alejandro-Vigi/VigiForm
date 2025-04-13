@@ -34,6 +34,23 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.util.Locale
 
+/**
+ * ES: DosageScreen es una función composable que permite al usuario calcular la dosis de un fármaco para un animal
+ * a partir de tres parámetros: la dosis requerida por kg, la concentración del fármaco y el peso del animal.
+ * La fórmula utilizada para el cálculo de la dosis es: D = (Dᵣ / Cᶠ) * m, donde D es la dosis de fármaco en mL,
+ * Dᵣ es la dosis requerida en mg/kg, Cᶠ es la concentración del fármaco en mg/mL y m es la masa del animal en kg.
+ * La pantalla tiene campos para ingresar estos tres valores, y muestra el resultado de la dosis calculada o un mensaje de
+ * error si falta algún dato o hay errores en el cálculo. También incluye un botón para realizar el cálculo y mostrar los errores
+ * específicos, como campos vacíos o división por cero.
+ *
+ * EN: DosageScreen is a composable function that allows the user to calculate the drug dose for an animal based on three parameters:
+ * the required dose per kg, the drug concentration, and the animal's weight. The formula used for the dose calculation is:
+ * D = (Dᵣ / Cᶠ) * m, where D is the drug dose in mL, Dᵣ is the required dose in mg/kg, Cᶠ is the drug concentration in mg/mL,
+ * and m is the animal's weight in kg. The screen has fields to input these three values and displays the calculated dose result or
+ * an error message if any data is missing or there are calculation errors. It also includes a button to perform the calculation
+ * and display specific errors, such as missing fields or division by zero.
+ */
+
 @Composable
 fun DosageScreen() {
     val focusManager = LocalFocusManager.current
@@ -173,7 +190,6 @@ fun DosageScreen() {
                 modifier = Modifier.fillMaxWidth()
             )
 
-            // Mostrar error o resultado de la densidad
             Spacer(modifier = Modifier.height(20.dp))
 
             drugDose.let {
