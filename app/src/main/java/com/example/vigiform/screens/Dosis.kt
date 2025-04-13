@@ -185,7 +185,7 @@ fun EnsilarScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, dosis requerida.")
+                        Text("Por favor, ingrese la dosis requerida.")
                     }
                 } else if (it == "MISSING_DRUGCONCENTRATION") {
                     Box(
@@ -297,6 +297,7 @@ fun EnsilarScreen() {
                 modifier = Modifier
                     .padding(top = 10.dp)
                     .align(Alignment.CenterHorizontally)
+                    .fillMaxWidth()
             ) {
                 Text(text = "Calcular Dosis de Fármaco")
             }

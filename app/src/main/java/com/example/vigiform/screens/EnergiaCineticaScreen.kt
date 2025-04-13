@@ -220,6 +220,7 @@ fun EnergiaCineticaScreen() {
                 modifier = Modifier
                     .padding(top = 10.dp)
                     .align(Alignment.CenterHorizontally)
+                    .fillMaxWidth()
             ) {
                 Text(text = "Calcular Energía Cinética")
             }

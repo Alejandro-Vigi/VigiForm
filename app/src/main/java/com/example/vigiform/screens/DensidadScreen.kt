@@ -227,6 +227,7 @@ fun DensidadScreen() {
                 modifier = Modifier
                     .padding(top = 10.dp)
                     .align(Alignment.CenterHorizontally)
+                    .fillMaxWidth()
             ) {
                 Text(text = "Calcular Densidad")
             }
