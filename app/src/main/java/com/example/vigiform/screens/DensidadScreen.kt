@@ -94,19 +94,19 @@ fun DensidadScreen() {
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "ρ = Densidad",
+                text = "ρ  =  Densidad",
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "m = Masa",
+                text = "m =  Masa",
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "V = Volumen",
+                text = "V  =  Volumen",
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
