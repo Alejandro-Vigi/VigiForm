@@ -35,11 +35,12 @@ import androidx.compose.ui.unit.sp
 import java.util.Locale
 
 @Composable
-fun EnergiaCineticaScreen() {
+fun DosageScreen() {
     val focusManager = LocalFocusManager.current
-    var mass by remember { mutableStateOf("") }
-    var velocity by remember { mutableStateOf("") }
-    var kinetic_energy by remember { mutableStateOf("") }
+    var requiredDosePerKg by remember { mutableStateOf("") }
+    var drugConcentration by remember { mutableStateOf("") }
+    var animalWeight by remember { mutableStateOf("") }
+    var drugDose by remember { mutableStateOf("") }
 
     Box(
         modifier = Modifier
@@ -58,8 +59,8 @@ fun EnergiaCineticaScreen() {
         ) {
             Spacer(modifier = Modifier.height(120.dp))
             Text(
-                text = "Fórmula de la Energía Cinética",
-                fontSize = 26.sp
+                text = "Fórmula de la Dosis de Fármaco",
+                fontSize = 24.sp
             )
             Spacer(modifier = Modifier.height(15.dp))
             Row(
@@ -67,21 +68,21 @@ fun EnergiaCineticaScreen() {
                 horizontalArrangement = Arrangement.Center,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text(text = "Eₖ", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
+                Text(text = "D", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
                 Text(text = "=", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = "1", fontSize = 24.sp)
+                    Text(text = "Dᵣ", fontSize = 24.sp)
                     HorizontalDivider(
                         modifier = Modifier
                             .width(40.dp)
                             .padding(vertical = 2.dp), thickness = 2.dp,
                         color = Color.Black
                     )
-                    Text(text = "2", fontSize = 24.sp)
+                    Text(text = "Cᶠ", fontSize = 24.sp)
                 }
-                Text(text = "mv²", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
+                Text(text = "m", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
             }
         }
 
@@ -97,20 +98,26 @@ fun EnergiaCineticaScreen() {
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "E  = Energía cinética",
+                text = "D  = Dosis de fármaco",
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "m = Masa",
+                text = "Dᵣ = Dosis requerida",
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "v  = Velocidad",
-                Modifier.padding(start = 27.dp),
+                text = "Cᶠ = Concentración del fármaco",
+                Modifier.padding(start = 25.dp),
+                fontSize = 20.sp
+            )
+            Spacer(modifier = Modifier.height(5.dp))
+            Text(
+                text = "m = Masa del animal",
+                Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
         }
@@ -118,19 +125,19 @@ fun EnergiaCineticaScreen() {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 375.dp, start = 35.dp, end = 35.dp),
+                .padding(top = 395.dp, start = 35.dp, end = 35.dp),
             horizontalAlignment = Alignment.Start
         ) {
 
             Spacer(modifier = Modifier.height(10.dp))
             TextField(
-                value = mass,
+                value = requiredDosePerKg,
                 onValueChange = { newValue ->
                     if (newValue.length <= 8 && newValue.all { it.isDigit() || it == '.' }) {
-                        mass = newValue
+                        requiredDosePerKg = newValue
                     }
                 },
-                label = { Text(text = "Ingrese la Masa [kg]:") },
+                label = { Text(text = "Ingrese la Dosis requerida [mg/kg]:") },
                 maxLines = 1,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
@@ -139,13 +146,28 @@ fun EnergiaCineticaScreen() {
             Spacer(modifier = Modifier.height(10.dp))
 
             TextField(
-                value = velocity,
+                value = drugConcentration,
                 onValueChange = { newValue ->
                     if (newValue.length <= 8 && newValue.all { it.isDigit() || it == '.' }) {
-                        velocity = newValue
+                        drugConcentration = newValue
                     }
                 },
-                label = { Text(text = "Ingrese la Velocidad [m/s]:") },
+                label = { Text(text = "Ingrese la Concentración del fármaco [mg/ml]:") },
+                maxLines = 1,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            TextField(
+                value = animalWeight,
+                onValueChange = { newValue ->
+                    if (newValue.length <= 8 && newValue.all { it.isDigit() || it == '.' }) {
+                        animalWeight = newValue
+                    }
+                },
+                label = { Text(text = "Ingrese la Masa del animal [kg]:") },
                 maxLines = 1,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
@@ -154,8 +176,8 @@ fun EnergiaCineticaScreen() {
             // Mostrar error o resultado de la densidad
             Spacer(modifier = Modifier.height(20.dp))
 
-            kinetic_energy.let {
-                if (it == "MISSING_MASS") {
+            drugDose.let {
+                if (it == "MISSING_DOSEPERKG") {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -163,9 +185,9 @@ fun EnergiaCineticaScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la masa.")
+                        Text("Por favor, ingrese la dosis requerida.")
                     }
-                } else if (it == "MISSING_VELOCITY") {
+                } else if (it == "MISSING_DRUGCONCENTRATION") {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -173,7 +195,57 @@ fun EnergiaCineticaScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la velocidad.")
+                        Text("Por favor, ingrese la concentración del fármaco.")
+                    }
+                } else if (it == "MISSING_DOSEPERKG_DRUGCONCENTRATION") {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color(0xFFFFCDD2))
+                            .padding(12.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text("Por favor, ingrese la dosis requerida y la concentración del fármaco.")
+                    }
+                } else if (it == "MISSING_DOSEPERKG_ANIMALWEIGHT") {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color(0xFFFFCDD2))
+                            .padding(12.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text("Por favor, ingrese la dosis requerida y la masa del animal.")
+                    }
+                } else if (it == "MISSING_DRUGCONCENTRATION_ANIMALWEIGHT") {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color(0xFFFFCDD2))
+                            .padding(12.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text("Por favor, ingrese la concentración del fármaco y la masa del animal.")
+                    }
+                } else if (it == "MISSING_ANIMALWEIGHT") {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color(0xFFFFCDD2))
+                            .padding(12.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text("Por favor, ingrese la masa del animal.")
+                    }
+                } else if (it == "DIVISION_BY_ZERO") {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color(0xFFFFCDD2))
+                            .padding(12.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text("No se puede dividir entre cero.")
                     }
                 } else if (it == "MISSING_BOTH") {
                     Box(
@@ -183,11 +255,11 @@ fun EnergiaCineticaScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la masa y la velocidad.")
+                        Text("Por favor, ingrese la dosis requerida, la concentración del fármaco y la masa del animal.")
                     }
                 } else if (it.isNotEmpty()) {
                     Text(
-                        text = "Energía cinética: $it [J]",
+                        text = "Dosis de fármaco: $it [mL]",
                         fontSize = 20.sp,
                         modifier = Modifier
                             .fillMaxWidth()
@@ -199,17 +271,22 @@ fun EnergiaCineticaScreen() {
 
             Spacer(modifier = Modifier.height(5.dp))
 
-            // Botón para calcular la densidad
             Button(
                 onClick = {
-                    val masaValue = mass.toFloatOrNull()
-                    val velocityValue = velocity.toFloatOrNull()
+                    val requiredDosePerKgValue = requiredDosePerKg.toFloatOrNull()
+                    val drugConcentrationValue = drugConcentration.toFloatOrNull()
+                    val animalWeightValue = animalWeight.toFloatOrNull()
 
-                    kinetic_energy = when {
-                        mass.isBlank() && velocity.isBlank() -> "MISSING_BOTH"
-                        mass.isBlank() -> "MISSING_MASS"
-                        velocity.isBlank() -> "MISSING_VELOCITY"
-                        masaValue != null && velocityValue != null -> String.format(Locale.US, "%.3f", 0.5 * masaValue * (velocityValue * velocityValue))
+                    drugDose = when {
+                        requiredDosePerKg.isBlank() && drugConcentration.isBlank() && animalWeight.isBlank() -> "MISSING_BOTH"
+                        requiredDosePerKg.isBlank() && drugConcentration.isBlank() -> "MISSING_DOSEPERKG_DRUGCONCENTRATION"
+                        requiredDosePerKg.isBlank() && animalWeight.isBlank() -> "MISSING_DOSEPERKG_ANIMALWEIGHT"
+                        drugConcentration.isBlank() && animalWeight.isBlank() -> "MISSING_DRUGCONCENTRATION_ANIMALWEIGHT"
+                        requiredDosePerKg.isBlank() -> "MISSING_DOSEPERKG"
+                        drugConcentration.isBlank() -> "MISSING_DRUGCONCENTRATION"
+                        animalWeight.isBlank() -> "MISSING_ANIMALWEIGHT"
+                        drugConcentrationValue == 0f -> "DIVISION_BY_ZERO"
+                        requiredDosePerKgValue != null && drugConcentrationValue != null && animalWeightValue != null -> String.format(Locale.US, "%.3f", (requiredDosePerKgValue/drugConcentrationValue)*animalWeightValue)
                         else -> "MISSING_BOTH"
                     }
                 },
@@ -222,7 +299,7 @@ fun EnergiaCineticaScreen() {
                     .align(Alignment.CenterHorizontally)
                     .fillMaxWidth()
             ) {
-                Text(text = "Calcular Energía Cinética")
+                Text(text = "Calcular Dosis de Fármaco")
             }
         }
     }

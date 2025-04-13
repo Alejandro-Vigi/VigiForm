@@ -33,7 +33,7 @@ import androidx.compose.ui.text.style.TextAlign
 
 
 @Composable
-fun LeyOhmScreen() {
+fun OhmsLawScreen() {
     val focusManager = LocalFocusManager.current
     var selectedForm by remember { mutableStateOf("V = I × R") }
     val forms = listOf("V = I × R", "I = V / R", "R = V / I")

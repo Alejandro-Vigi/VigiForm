@@ -1,6 +1,7 @@
 package com.example.vigiform.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -23,22 +25,21 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import androidx.compose.foundation.gestures.detectTapGestures
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import java.util.Locale
 
 @Composable
-fun DensidadScreen() {
+fun KineticEnergyScreen() {
     val focusManager = LocalFocusManager.current
     var mass by remember { mutableStateOf("") }
-    var volume by remember { mutableStateOf("") }
-    var density by remember { mutableStateOf("") }
+    var velocity by remember { mutableStateOf("") }
+    var result by remember { mutableStateOf("") }
 
     Box(
         modifier = Modifier
@@ -57,8 +58,8 @@ fun DensidadScreen() {
         ) {
             Spacer(modifier = Modifier.height(120.dp))
             Text(
-                text = "Fórmula de la Densidad",
-                fontSize = 30.sp
+                text = "Fórmula de la Energía Cinética",
+                fontSize = 26.sp
             )
             Spacer(modifier = Modifier.height(15.dp))
             Row(
@@ -66,19 +67,21 @@ fun DensidadScreen() {
                 horizontalArrangement = Arrangement.Center,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text(text = "ρ =", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
+                Text(text = "Eₖ", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
+                Text(text = "=", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = "m", fontSize = 24.sp)
+                    Text(text = "1", fontSize = 24.sp)
                     HorizontalDivider(
                         modifier = Modifier
                             .width(40.dp)
                             .padding(vertical = 2.dp), thickness = 2.dp,
                         color = Color.Black
                     )
-                    Text(text = "V", fontSize = 24.sp)
+                    Text(text = "2", fontSize = 24.sp)
                 }
+                Text(text = "mv²", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
             }
         }
 
@@ -94,20 +97,20 @@ fun DensidadScreen() {
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "ρ  =  Densidad",
+                text = "E  = Energía cinética",
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "m =  Masa",
+                text = "m = Masa",
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "V  =  Volumen",
-                Modifier.padding(start = 25.dp),
+                text = "v  = Velocidad",
+                Modifier.padding(start = 27.dp),
                 fontSize = 20.sp
             )
         }
@@ -136,13 +139,13 @@ fun DensidadScreen() {
             Spacer(modifier = Modifier.height(10.dp))
 
             TextField(
-                value = volume,
+                value = velocity,
                 onValueChange = { newValue ->
                     if (newValue.length <= 8 && newValue.all { it.isDigit() || it == '.' }) {
-                        volume = newValue
+                        velocity = newValue
                     }
                 },
-                label = { Text(text = "Ingrese el Volumen [m³]:") },
+                label = { Text(text = "Ingrese la Velocidad [m/s]:") },
                 maxLines = 1,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
@@ -151,7 +154,7 @@ fun DensidadScreen() {
             // Mostrar error o resultado de la densidad
             Spacer(modifier = Modifier.height(20.dp))
 
-            density.let {
+            result.let {
                 if (it == "MISSING_MASS") {
                     Box(
                         modifier = Modifier
@@ -162,7 +165,7 @@ fun DensidadScreen() {
                     ) {
                         Text("Por favor, ingrese la masa.")
                     }
-                } else if (it == "MISSING_VOLUME") {
+                } else if (it == "MISSING_VELOCITY") {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -170,7 +173,7 @@ fun DensidadScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese el volumen.")
+                        Text("Por favor, ingrese la velocidad.")
                     }
                 } else if (it == "MISSING_BOTH") {
                     Box(
@@ -180,25 +183,16 @@ fun DensidadScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la masa y el volumen.")
-                    }
-                } else if (it == "DIVISION_BY_ZERO") {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2))
-                            .padding(12.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text("No se puede dividir entre cero.")
+                        Text("Por favor, ingrese la masa y la velocidad.")
                     }
                 } else if (it.isNotEmpty()) {
                     Text(
-                        text = "Densidad: $it [kg/m³]",
+                        text = "Energía cinética: $it [J]",
                         fontSize = 20.sp,
                         modifier = Modifier
-                            .align(Alignment.CenterHorizontally)
-                            .padding(12.dp)
+                            .fillMaxWidth()
+                            .padding(12.dp),
+                        textAlign = TextAlign.Center
                     )
                 }
             }
@@ -209,14 +203,13 @@ fun DensidadScreen() {
             Button(
                 onClick = {
                     val masaValue = mass.toFloatOrNull()
-                    val volumenValue = volume.toFloatOrNull()
+                    val velocityValue = velocity.toFloatOrNull()
 
-                    density = when {
-                        mass.isBlank() && volume.isBlank() -> "MISSING_BOTH"
+                    result = when {
+                        mass.isBlank() && velocity.isBlank() -> "MISSING_BOTH"
                         mass.isBlank() -> "MISSING_MASS"
-                        volume.isBlank() -> "MISSING_VOLUME"
-                        volumenValue == 0f -> "DIVISION_BY_ZERO"
-                        masaValue != null && volumenValue != null -> String.format(Locale.US, "%.3f", masaValue / volumenValue)
+                        velocity.isBlank() -> "MISSING_VELOCITY"
+                        masaValue != null && velocityValue != null -> String.format(Locale.US, "%.3f", 0.5 * masaValue * (velocityValue * velocityValue))
                         else -> "MISSING_BOTH"
                     }
                 },
@@ -229,9 +222,8 @@ fun DensidadScreen() {
                     .align(Alignment.CenterHorizontally)
                     .fillMaxWidth()
             ) {
-                Text(text = "Calcular Densidad")
+                Text(text = "Calcular Energía Cinética")
             }
         }
     }
 }
-

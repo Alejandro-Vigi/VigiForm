@@ -22,7 +22,7 @@ import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.ui.res.painterResource
 import com.example.vigiform.navigation.Github
 import androidx.core.net.toUri
@@ -30,7 +30,7 @@ import com.example.vigiform.navigation.LinkedinLogo
 import com.example.vigiform.R
 
 @Composable
-fun AcercaDeScreen() {
+fun AboutScreen() {
     val context = LocalContext.current
     Box (
         modifier = Modifier
@@ -72,12 +72,12 @@ fun AcercaDeScreen() {
                 fontSize = 15.sp
             )
 
-            Divider(
-                color = Color.Black,
-                thickness = 1.dp,
+            HorizontalDivider(
                 modifier = Modifier
                     .padding(vertical = 16.dp)
-                    .fillMaxWidth(0.8f)
+                    .fillMaxWidth(0.8f),
+                thickness = 1.dp,
+                color = Color.Black
             )
 
             Row (

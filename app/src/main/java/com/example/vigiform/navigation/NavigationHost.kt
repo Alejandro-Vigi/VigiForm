@@ -4,11 +4,11 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.vigiform.screens.AcercaDeScreen
-import com.example.vigiform.screens.DensidadScreen
-import com.example.vigiform.screens.EnergiaCineticaScreen
-import com.example.vigiform.screens.EnsilarScreen
-import com.example.vigiform.screens.LeyOhmScreen
+import com.example.vigiform.screens.AboutScreen
+import com.example.vigiform.screens.DensityScreen
+import com.example.vigiform.screens.KineticEnergyScreen
+import com.example.vigiform.screens.DosageScreen
+import com.example.vigiform.screens.OhmsLawScreen
 
 @Composable
 fun NavigationHost (
@@ -16,12 +16,12 @@ fun NavigationHost (
 ) {
     NavHost(
         navController = navController,
-        startDestination = Routes.LeyOhm.route
+        startDestination = Routes.OhmsLaw.route
     ) {
-        composable(Routes.LeyOhm.route) { LeyOhmScreen() }
-        composable(Routes.Dosis.route) { EnsilarScreen() }
-        composable(Routes.EnergiaCinetica.route) { EnergiaCineticaScreen() }
-        composable(Routes.Densidad.route) { DensidadScreen() }
-        composable(Routes.AcercaDe.route) { AcercaDeScreen() }
+        composable(Routes.OhmsLaw.route) { OhmsLawScreen() }
+        composable(Routes.Dosage.route) { DosageScreen() }
+        composable(Routes.KineticEnergy.route) { KineticEnergyScreen() }
+        composable(Routes.Density.route) { DensityScreen() }
+        composable(Routes.About.route) { AboutScreen() }
     }
 }

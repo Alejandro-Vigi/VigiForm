@@ -14,11 +14,11 @@ data class Item(
 
 object Items {
     val items = arrayOf(
-        Item("Ley Ohm", false, Electric_bolt, "LeyOhm", Routes.LeyOhm.route),
-        Item("Dosis", false, Dog, "Dosis", Routes.Dosis.route),
-        Item("Energia Cinetica", false, TestTubeDiagonal, "EnergiaCinetica", Routes.EnergiaCinetica.route),
-        Item("Densidad", false, FlaskConical, "Densidad", Routes.Densidad.route),
-        Item("Acerca de", false, Icons.Default.Info, "Densidad", Routes.AcercaDe.route)
+        Item("Ohms Law", false, Electric_bolt, "OhmsLaw", Routes.OhmsLaw.route),
+        Item("Dosage", false, Dog, "Dosage", Routes.Dosage.route),
+        Item("Kinetic Energy", false, TestTubeDiagonal, "KineticEnergy", Routes.KineticEnergy.route),
+        Item("Density", false, FlaskConical, "Density", Routes.Density.route),
+        Item("About", false, Icons.Default.Info, "About", Routes.About.route)
     )
 }
 
