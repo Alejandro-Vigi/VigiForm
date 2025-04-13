@@ -67,14 +67,14 @@ fun NavDrawer() {
         drawerContent = {
             ModalDrawerSheet(
                 modifier = Modifier
-                    .width(LocalConfiguration.current.screenWidthDp.dp * 0.65f)
+                    .width(LocalConfiguration.current.screenWidthDp.dp * 0.6f)
                     .statusBarsPadding() // Asegura que el drawer se extienda debajo de la barra de estado
             ) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(200.dp)
-                        .background(Color(193, 152, 250))
+                        .height(64.dp)
+                        .background(Color(122, 98, 156))
                 ) {
                     Text(text = "")
                 }
@@ -134,7 +134,7 @@ fun NavDrawer() {
                         }
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
-                        containerColor = Color(193, 152, 250), // Color de fondo de la TopAppBar
+                        containerColor = Color(122, 98, 156), // Color de fondo de la TopAppBar
                         titleContentColor = Color.White, // Color del título
                         navigationIconContentColor = Color.White, // Color del ícono de navegación
                         actionIconContentColor = Color.White // Color de los íconos de acciones
