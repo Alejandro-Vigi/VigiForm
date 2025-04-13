@@ -24,6 +24,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.core.net.toUri
 import com.example.vigiform.navigation.getLinkedinLogo
 import com.example.vigiform.R
@@ -45,6 +46,9 @@ import com.example.vigiform.navigation.getGithub
 @Composable
 fun AboutScreen() {
     val context = LocalContext.current
+    val instagramUrl = stringResource(id = R.string.url_instagram)
+    val linkedinUrl = stringResource(id = R.string.url_linkedin)
+    val githubUrl = stringResource(id = R.string.url_github)
     Box (
         modifier = Modifier
             .fillMaxSize()
@@ -57,31 +61,31 @@ fun AboutScreen() {
         ) {
             Spacer(modifier = Modifier.height(130.dp))
             Text(
-                text = "VigiForm",
+                text = stringResource(id = R.string.app_name),
                 fontSize = 25.sp
             )
 
             Image(
                 painter = painterResource(id = R.drawable.icon),
-                contentDescription = "Icono de fórmula",
+                contentDescription = stringResource(id = R.string.icon_description),
                 modifier = Modifier
-                    .size(130.dp) // puedes ajustar el tamaño
+                    .size(130.dp)
                     .padding(16.dp),
                 contentScale = ContentScale.Fit
             )
 
             Text(
-                text = "Creado por: Vigi Garduño Marco Alejandro",
+                text = stringResource(id = R.string.autor),
                 fontSize = 16.sp
             )
 
             Text(
-                text = "Facultad de Ingeniería - 2025 ©",
+                text = stringResource(id = R.string.faculty),
                 fontSize = 15.sp
             )
 
             Text(
-                text = "Version: 1.0",
+                text = stringResource(id = R.string.version),
                 fontSize = 15.sp
             )
 
@@ -98,12 +102,12 @@ fun AboutScreen() {
             ) {
                 Icon(
                     imageVector = getInstagram(context),
-                    contentDescription = "Instagram Icon",
+                    contentDescription = stringResource(id = R.string.instagram_description),
                     modifier = Modifier
                         .size(40.dp)
                         .clickable {
                             val intent = Intent(Intent.ACTION_VIEW,
-                                "https://www.instagram.com/alejandro_vigi".toUri())
+                                instagramUrl.toUri())
                             context.startActivity(intent)
                         },
                     tint = Color.Black
@@ -111,12 +115,12 @@ fun AboutScreen() {
                 Spacer(modifier = Modifier.height(20.dp))
                 Icon(
                     imageVector = getLinkedinLogo(context),
-                    contentDescription = "LinkedIn Icon",
+                    contentDescription = stringResource(id = R.string.linkedin_description),
                     modifier = Modifier
                         .size(40.dp)
                         .clickable {
                             val intent = Intent(Intent.ACTION_VIEW,
-                                "https://www.linkedin.com/in/alejandro-vigi/".toUri())
+                                linkedinUrl.toUri())
                             context.startActivity(intent)
                         },
                     tint = Color.Black
@@ -124,12 +128,12 @@ fun AboutScreen() {
                 Spacer(modifier = Modifier.height(20.dp))
                 Icon(
                     imageVector = getGithub(context),
-                    contentDescription = "Github Icon",
+                    contentDescription = stringResource(id = R.string.github_description),
                     modifier = Modifier
                         .size(40.dp)
                         .clickable {
                             val intent = Intent(Intent.ACTION_VIEW,
-                                "https://github.com/Alejandro-Vigi".toUri())
+                                githubUrl.toUri())
                             context.startActivity(intent)
                         },
                     tint = Color.Black

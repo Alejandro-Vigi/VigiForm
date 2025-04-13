@@ -2,21 +2,43 @@
     <string name="app_name">VigiForm</string>
 
     <!-- Items.kt -->
-    <string name="OhmsLaw">Ohms Law</string>
-    <string name="Dosage">Dosage</string>
-    <string name="KineticEnergy">Kinetic Energy</string>
-    <string name="Density">Density</string>
-    <string name="About">About</string>
-    <string name="Ohms_Law">OhmsLaw</string>
-    <string name="Kinetic_Energy">KineticEnergy</string>
+    <string name="ohms_law">Ohms Law</string>
+    <string name="dosage">Dosage</string>
+    <string name="kinetic_energy">Kinetic Energy</string>
+    <string name="density">Density</string>
+    <string name="about">About</string>
+    <string name="ohms_law2">OhmsLaw</string>
+    <string name="kinetic_energy2">KineticEnergy</string>
 
     <!-- Icons.kt -->
-    <string name="Dog">Dog</string>
-    <string name="ElectricBolt">Electric_bolt</string>
-    <string name="TestTubeDiagonal">TestTubeDiagonal</string>
-    <string name="FlaskConical">FlaskConical</string>
-    <string name="Instagram">Instagram</string>
-    <string name="Linkedin">LinkedinLogo</string>
-    <string name="Github">Github</string>
+    <string name="dog">Dog</string>
+    <string name="electricBolt">Electric_bolt</string>
+    <string name="testTube_diagonal">TestTubeDiagonal</string>
+    <string name="flaskConical">FlaskConical</string>
+    <string name="instagram">Instagram</string>
+    <string name="linkedin">LinkedinLogo</string>
+    <string name="github">Github</string>
+
+    <!-- AboutScreen.kt-->
+    <string name="icon_description">Icono de fórmula</string>
+    <string name="autor">Creado por: Vigi Garduño Marco Alejandro</string>
+    <string name="faculty">Facultad de Ingeniería - 2025 ©</string>
+    <string name="version">Version: 1.0</string>
+    <string name="instagram_description">Instagram Icon</string>
+    <string name="url_instagram">https://www.instagram.com/alejandro_vigi</string>
+    <string name="linkedin_description">LinkedIn Icon</string>
+    <string name="url_linkedin">https://www.linkedin.com/in/alejandro-vigi/</string>
+    <string name="github_description">Github Icon</string>
+    <string name="url_github">https://github.com/Alejandro-Vigi</string>
+
+    <!-- DensityScreen.kt-->
+
+    <!-- DosageScreen.kt-->
+
+    <!-- KineticEnergyScreen.kt-->
+
+    <!-- OhmsLawScreen.kt-->
+
+    <!-- MainActivity.kt-->
 
 </resources>

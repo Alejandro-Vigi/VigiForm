@@ -33,13 +33,13 @@ data class Item(
  */
 
 object ItemNames {
-    fun getOhmsLaw(context: Context): String { return context.getString(R.string.OhmsLaw) }
-    fun getOhmsLaw2(context: Context): String { return context.getString(R.string.Ohms_Law) }
-    fun getDosage(context: Context): String { return context.getString(R.string.Dosage) }
-    fun getKineticEnergy(context: Context): String { return context.getString(R.string.KineticEnergy) }
-    fun getKineticEnergy2(context: Context): String { return context.getString(R.string.Kinetic_Energy) }
-    fun getDensity(context: Context): String { return context.getString(R.string.Density) }
-    fun getAbout(context: Context): String { return context.getString(R.string.About) }
+    fun getOhmsLaw(context: Context): String { return context.getString(R.string.ohms_law) }
+    fun getOhmsLaw2(context: Context): String { return context.getString(R.string.ohms_law2) }
+    fun getDosage(context: Context): String { return context.getString(R.string.dosage) }
+    fun getKineticEnergy(context: Context): String { return context.getString(R.string.kinetic_energy) }
+    fun getKineticEnergy2(context: Context): String { return context.getString(R.string.kinetic_energy2) }
+    fun getDensity(context: Context): String { return context.getString(R.string.density) }
+    fun getAbout(context: Context): String { return context.getString(R.string.about) }
 }
 
 object Items {

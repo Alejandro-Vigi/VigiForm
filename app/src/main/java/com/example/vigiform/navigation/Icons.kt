@@ -26,13 +26,13 @@ import com.example.vigiform.R
  */
 
 object IconNames {
-    fun getDog(context: Context): String { return context.getString(R.string.Dog) }
-    fun getElectricBolt(context: Context): String { return context.getString(R.string.ElectricBolt) }
-    fun getTestTubeDiagonal(context: Context): String { return context.getString(R.string.TestTubeDiagonal) }
-    fun getFlaskConical(context: Context): String { return context.getString(R.string.FlaskConical) }
-    fun getInstagram(context: Context): String { return context.getString(R.string.Instagram) }
-    fun getLinkedin(context: Context): String { return context.getString(R.string.Linkedin) }
-    fun getGithub(context: Context): String { return context.getString(R.string.Github) }
+    fun getDog(context: Context): String { return context.getString(R.string.dog) }
+    fun getElectricBolt(context: Context): String { return context.getString(R.string.electricBolt) }
+    fun getTestTubeDiagonal(context: Context): String { return context.getString(R.string.testTube_diagonal) }
+    fun getFlaskConical(context: Context): String { return context.getString(R.string.flaskConical) }
+    fun getInstagram(context: Context): String { return context.getString(R.string.instagram) }
+    fun getLinkedin(context: Context): String { return context.getString(R.string.linkedin) }
+    fun getGithub(context: Context): String { return context.getString(R.string.github) }
 }
 
 /** Vector 1
