@@ -31,7 +31,25 @@
     <string name="github_description">Github Icon</string>
     <string name="url_github">https://github.com/Alejandro-Vigi</string>
 
+    <!-- Multiple Screens -->
+    <string name="label_where">En dónde:</string>
+    <string name="division_by_zero">No se puede dividir entre cero.</string>
+
     <!-- DensityScreen.kt-->
+    <string name="form_density">Fórmula de la Densidad</string>
+    <string name="density_letter">ρ =</string>
+    <string name="mass_leter">m</string>
+    <string name="volume_letter">V</string>
+    <string name="density_screen">ρ  =  Densidad</string>
+    <string name="mass">m =  Masa</string>
+    <string name="volume">V  =  Volumen</string>
+    <string name="input_mass">Ingrese la Masa [kg]:</string>
+    <string name="input_volume">Ingrese el Volumen [m³]:</string>
+    <string name="error_mass">Por favor, ingrese la masa.</string>
+    <string name="error_volume">Por favor, ingrese el volumen.</string>
+    <string name="error_mass_volume">Por favor, ingrese la masa y el volumen.</string>
+    <string name="calculate_density">Calcular Densidad</string>
+    <string name="density_result">Densidad: %1$s [kg/m³]</string>
 
     <!-- DosageScreen.kt-->
 

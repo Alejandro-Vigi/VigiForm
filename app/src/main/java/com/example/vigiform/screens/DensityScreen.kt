@@ -31,6 +31,8 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.stringResource
+import com.example.vigiform.R
 import java.util.Locale
 
 /**
@@ -46,6 +48,13 @@ import java.util.Locale
  * density or an error message if data is missing or there are calculation errors. There is also a button
  * to perform the calculation.
  */
+
+// Density error codes
+
+private const val MISSING_MASS = "MISSING_MASS"
+private const val MISSING_VOLUME = "MISSING_VOLUME"
+private const val MISSING_BOTH = "MISSING_BOTH"
+private const val DIVISION_BY_ZERO = "DIVISION_BY_ZERO"
 
 @Composable
 fun DensityScreen() {
@@ -71,7 +80,7 @@ fun DensityScreen() {
         ) {
             Spacer(modifier = Modifier.height(120.dp))
             Text(
-                text = "Fórmula de la Densidad",
+                text = stringResource(id = R.string.form_density),
                 fontSize = 30.sp
             )
             Spacer(modifier = Modifier.height(15.dp))
@@ -80,18 +89,18 @@ fun DensityScreen() {
                 horizontalArrangement = Arrangement.Center,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text(text = "ρ =", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
+                Text(text = stringResource(id = R.string.density_letter), fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = "m", fontSize = 24.sp)
+                    Text(text = stringResource(id = R.string.mass_leter), fontSize = 24.sp)
                     HorizontalDivider(
                         modifier = Modifier
                             .width(40.dp)
                             .padding(vertical = 2.dp), thickness = 2.dp,
                         color = Color.Black
                     )
-                    Text(text = "V", fontSize = 24.sp)
+                    Text(text = stringResource(id = R.string.volume_letter), fontSize = 24.sp)
                 }
             }
         }
@@ -103,24 +112,24 @@ fun DensityScreen() {
             horizontalAlignment = Alignment.Start
         ) {
             Text(
-                text = "En dónde:",
+                text = stringResource(id = R.string.label_where),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "ρ  =  Densidad",
+                text = stringResource(id = R.string.density_screen),
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "m =  Masa",
+                text = stringResource(id = R.string.mass),
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "V  =  Volumen",
+                text = stringResource(id = R.string.volume),
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
@@ -141,7 +150,7 @@ fun DensityScreen() {
                         mass = newValue
                     }
                 },
-                label = { Text(text = "Ingrese la Masa [kg]:") },
+                label = { Text(stringResource(id = R.string.input_mass)) },
                 maxLines = 1,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
@@ -156,7 +165,7 @@ fun DensityScreen() {
                         volume = newValue
                     }
                 },
-                label = { Text(text = "Ingrese el Volumen [m³]:") },
+                label = { Text(stringResource(id = R.string.input_volume)) },
                 maxLines = 1,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
@@ -165,17 +174,7 @@ fun DensityScreen() {
             Spacer(modifier = Modifier.height(20.dp))
 
             density.let {
-                if (it == "MISSING_MASS") {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2)) // Rojo claro
-                            .padding(12.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text("Por favor, ingrese la masa.")
-                    }
-                } else if (it == "MISSING_VOLUME") {
+                if (it == MISSING_MASS) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -183,9 +182,9 @@ fun DensityScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese el volumen.")
+                        Text(stringResource(id = R.string.error_mass))
                     }
-                } else if (it == "MISSING_BOTH") {
+                } else if (it == MISSING_VOLUME) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -193,9 +192,9 @@ fun DensityScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la masa y el volumen.")
+                        Text(stringResource(id = R.string.error_volume))
                     }
-                } else if (it == "DIVISION_BY_ZERO") {
+                } else if (it == MISSING_BOTH) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -203,11 +202,21 @@ fun DensityScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("No se puede dividir entre cero.")
+                        Text(stringResource(id = R.string.error_mass_volume))
+                    }
+                } else if (it == DIVISION_BY_ZERO) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color(0xFFFFCDD2))
+                            .padding(12.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(stringResource(id = R.string.division_by_zero))
                     }
                 } else if (it.isNotEmpty()) {
                     Text(
-                        text = "Densidad: $it [kg/m³]",
+                        text = stringResource(R.string.density_result, it),
                         fontSize = 20.sp,
                         modifier = Modifier
                             .align(Alignment.CenterHorizontally)
@@ -224,12 +233,12 @@ fun DensityScreen() {
                     val volumenValue = volume.toFloatOrNull()
 
                     density = when {
-                        mass.isBlank() && volume.isBlank() -> "MISSING_BOTH"
-                        mass.isBlank() -> "MISSING_MASS"
-                        volume.isBlank() -> "MISSING_VOLUME"
-                        volumenValue == 0f -> "DIVISION_BY_ZERO"
+                        mass.isBlank() && volume.isBlank() -> MISSING_BOTH
+                        mass.isBlank() -> MISSING_MASS
+                        volume.isBlank() -> MISSING_VOLUME
+                        volumenValue == 0f -> DIVISION_BY_ZERO
                         masaValue != null && volumenValue != null -> String.format(Locale.US, "%.3f", masaValue / volumenValue)
-                        else -> "MISSING_BOTH"
+                        else -> MISSING_BOTH
                     }
                 },
                 colors = ButtonDefaults.buttonColors(
@@ -241,7 +250,7 @@ fun DensityScreen() {
                     .align(Alignment.CenterHorizontally)
                     .fillMaxWidth()
             ) {
-                Text(text = "Calcular Densidad")
+                Text(text = stringResource(id = R.string.calculate_density))
             }
         }
     }
