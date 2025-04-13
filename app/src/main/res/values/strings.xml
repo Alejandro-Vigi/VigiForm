@@ -76,6 +76,20 @@
     <string name="calculate_dosage">Calcular Dosis de Fármaco</string>
 
     <!-- KineticEnergyScreen.kt-->
+    <string name="form_kinetic_energy">Fórmula de la Energía Cinética</string>
+    <string name="kinetic_letter">Eₖ</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="mv2">mv²</string>
+    <string name="kinetic">E  = Energía cinética</string>
+    <string name="kinetic_mass">m = Masa</string>
+    <string name="kinetic_velocity">v  = Velocidad</string>
+    <string name="input_kinetic_mass">Ingrese la Masa [kg]:</string>
+    <string name="input_kinetic_velocity">Ingrese la Velocidad [m/s]:</string>
+    <string name="error_velocity">Por favor, ingrese la velocidad.</string>
+    <string name="error_mass_velocity">Por favor, ingrese la masa y la velocidad.</string>
+    <string name="kinetic_result">Energía cinética: %1$s [J]</string>
+    <string name="calculate_kinetic">Calcular Energía Cinética</string>
 
     <!-- OhmsLawScreen.kt-->
 

@@ -28,10 +28,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.vigiform.R
 import java.util.Locale
 
 /**
@@ -49,6 +51,12 @@ import java.util.Locale
  * or there are calculation errors, such as when one or both fields are empty. It also includes a button to perform
  * the calculation and display the results or specific error messages.
  */
+
+// KineticEnergy error codes
+
+private const val MISSING_BOTH = "MISSING_BOTH"
+private const val MISSING_MASS = "MISSING_MASS"
+private const val MISSING_VELOCITY = "MISSING_VELOCITY"
 
 @Composable
 fun KineticEnergyScreen() {
@@ -74,7 +82,7 @@ fun KineticEnergyScreen() {
         ) {
             Spacer(modifier = Modifier.height(120.dp))
             Text(
-                text = "Fórmula de la Energía Cinética",
+                text = stringResource(id = R.string.form_kinetic_energy),
                 fontSize = 26.sp
             )
             Spacer(modifier = Modifier.height(15.dp))
@@ -83,21 +91,21 @@ fun KineticEnergyScreen() {
                 horizontalArrangement = Arrangement.Center,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text(text = "Eₖ", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
-                Text(text = "=", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
+                Text(text = stringResource(id = R.string.kinetic_letter), fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
+                Text(text = stringResource(id = R.string.equal), fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = "1", fontSize = 24.sp)
+                    Text(text = stringResource(id = R.string.one), fontSize = 24.sp)
                     HorizontalDivider(
                         modifier = Modifier
                             .width(40.dp)
                             .padding(vertical = 2.dp), thickness = 2.dp,
                         color = Color.Black
                     )
-                    Text(text = "2", fontSize = 24.sp)
+                    Text(text = stringResource(id = R.string.two), fontSize = 24.sp)
                 }
-                Text(text = "mv²", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
+                Text(text = stringResource(id = R.string.mv2), fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
             }
         }
 
@@ -108,24 +116,24 @@ fun KineticEnergyScreen() {
             horizontalAlignment = Alignment.Start
         ) {
             Text(
-                text = "En dónde:",
+                text = stringResource(id = R.string.label_where),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "E  = Energía cinética",
+                text = stringResource(id = R.string.kinetic),
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "m = Masa",
+                text = stringResource(id = R.string.kinetic_mass),
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "v  = Velocidad",
+                text = stringResource(id = R.string.kinetic_velocity),
                 Modifier.padding(start = 27.dp),
                 fontSize = 20.sp
             )
@@ -146,7 +154,7 @@ fun KineticEnergyScreen() {
                         mass = newValue
                     }
                 },
-                label = { Text(text = "Ingrese la Masa [kg]:") },
+                label = { Text(stringResource(id = R.string.input_kinetic_mass)) },
                 maxLines = 1,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
@@ -161,7 +169,7 @@ fun KineticEnergyScreen() {
                         velocity = newValue
                     }
                 },
-                label = { Text(text = "Ingrese la Velocidad [m/s]:") },
+                label = { Text(stringResource(id = R.string.input_kinetic_velocity)) },
                 maxLines = 1,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
@@ -170,17 +178,7 @@ fun KineticEnergyScreen() {
             Spacer(modifier = Modifier.height(20.dp))
 
             result.let {
-                if (it == "MISSING_MASS") {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2)) // Rojo claro
-                            .padding(12.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text("Por favor, ingrese la masa.")
-                    }
-                } else if (it == "MISSING_VELOCITY") {
+                if (it == MISSING_MASS) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -188,9 +186,9 @@ fun KineticEnergyScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la velocidad.")
+                        Text(stringResource(id = R.string.error_mass))
                     }
-                } else if (it == "MISSING_BOTH") {
+                } else if (it == MISSING_VELOCITY) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -198,11 +196,21 @@ fun KineticEnergyScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la masa y la velocidad.")
+                        Text(stringResource(id = R.string.error_velocity))
+                    }
+                } else if (it == MISSING_BOTH) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color(0xFFFFCDD2))
+                            .padding(12.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(stringResource(id = R.string.error_mass_velocity))
                     }
                 } else if (it.isNotEmpty()) {
                     Text(
-                        text = "Energía cinética: $it [J]",
+                        text = stringResource(id = R.string.kinetic_result, it),
                         fontSize = 20.sp,
                         modifier = Modifier
                             .fillMaxWidth()
@@ -220,11 +228,11 @@ fun KineticEnergyScreen() {
                     val velocityValue = velocity.toFloatOrNull()
 
                     result = when {
-                        mass.isBlank() && velocity.isBlank() -> "MISSING_BOTH"
-                        mass.isBlank() -> "MISSING_MASS"
-                        velocity.isBlank() -> "MISSING_VELOCITY"
+                        mass.isBlank() && velocity.isBlank() -> MISSING_BOTH
+                        mass.isBlank() -> MISSING_MASS
+                        velocity.isBlank() -> MISSING_VELOCITY
                         masaValue != null && velocityValue != null -> String.format(Locale.US, "%.3f", 0.5 * masaValue * (velocityValue * velocityValue))
-                        else -> "MISSING_BOTH"
+                        else -> MISSING_BOTH
                     }
                 },
                 colors = ButtonDefaults.buttonColors(
@@ -236,7 +244,7 @@ fun KineticEnergyScreen() {
                     .align(Alignment.CenterHorizontally)
                     .fillMaxWidth()
             ) {
-                Text(text = "Calcular Energía Cinética")
+                Text(text = stringResource(id = R.string.calculate_kinetic))
             }
         }
     }
