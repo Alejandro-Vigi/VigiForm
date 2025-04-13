@@ -16,7 +16,7 @@ sealed class Routes (
     /*
     ES: No lo considero como hardcoding negativo ya que estas rutas son identificadores internos utilizados por el sistema de navegación.
     * No se muestran al usuario, no cambian con el idioma, y deben ser estables para mantener la integridad de la navegación.
-    * Moverlas a strings.xml no aportaría beneficios y solo complicaría el código innecesariamente.
+    * Moverlas a strings.xml no aportaría beneficios y solo complicaría el código innecesariamente. Por lo que lo dejaré así.
 
     EN: This is not considered bad hardcoding since these routes are internal identifiers used by the navigation system.
     * They are not user-facing, do not change based on language, and need to remain stable to ensure navigation integrity.
