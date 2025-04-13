@@ -28,10 +28,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.vigiform.R
 import java.util.Locale
 
 /**
@@ -50,6 +52,17 @@ import java.util.Locale
  * an error message if any data is missing or there are calculation errors. It also includes a button to perform the calculation
  * and display specific errors, such as missing fields or division by zero.
  */
+
+// Dosage error codes
+
+private const val MISSING_DOSEPERKG = "MISSING_DOSEPERKG"
+private const val MISSING_DRUGCONCENTRATION = "MISSING_DRUGCONCENTRATION"
+private const val MISSING_DOSEPERKG_DRUGCONCENTRATION = "MISSING_DOSEPERKG_DRUGCONCENTRATION"
+private const val MISSING_DRUGCONCENTRATION_ANIMALWEIGHT = "MISSING_DRUGCONCENTRATION_ANIMALWEIGHT"
+private const val MISSING_ANIMALWEIGHT = "MISSING_ANIMALWEIGHT"
+private const val MISSING_DOSEPERKG_ANIMALWEIGHT = "MISSING_DOSEPERKG_ANIMALWEIGHT"
+private const val DIVISION_BY_ZERO = "DIVISION_BY_ZERO"
+private const val MISSING_BOTH = "MISSING_BOTH"
 
 @Composable
 fun DosageScreen() {
@@ -76,7 +89,7 @@ fun DosageScreen() {
         ) {
             Spacer(modifier = Modifier.height(120.dp))
             Text(
-                text = "Fórmula de la Dosis de Fármaco",
+                text = stringResource(id = R.string.form_dosage),
                 fontSize = 24.sp
             )
             Spacer(modifier = Modifier.height(15.dp))
@@ -85,21 +98,21 @@ fun DosageScreen() {
                 horizontalArrangement = Arrangement.Center,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text(text = "D", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
-                Text(text = "=", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
+                Text(text = stringResource(id = R.string.dosage_letter), fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
+                Text(text = stringResource(id = R.string.equal), fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = "Dᵣ", fontSize = 24.sp)
+                    Text(text = stringResource(id = R.string.dosage_r), fontSize = 24.sp)
                     HorizontalDivider(
                         modifier = Modifier
                             .width(40.dp)
                             .padding(vertical = 2.dp), thickness = 2.dp,
                         color = Color.Black
                     )
-                    Text(text = "Cᶠ", fontSize = 24.sp)
+                    Text(text = stringResource(id = R.string.concentration), fontSize = 24.sp)
                 }
-                Text(text = "m", fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
+                Text(text = stringResource(id = R.string.mass_leter), fontSize = 28.sp, modifier = Modifier.padding(end = 8.dp))
             }
         }
 
@@ -110,30 +123,30 @@ fun DosageScreen() {
             horizontalAlignment = Alignment.Start
         ) {
             Text(
-                text = "En dónde:",
+                text = stringResource(id = R.string.label_where),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "D  = Dosis de fármaco",
+                text = stringResource(id = R.string.dosage_screen),
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "Dᵣ = Dosis requerida",
+                text = stringResource(id = R.string.dosage_r_screen),
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "Cᶠ = Concentración del fármaco",
+                text = stringResource(id = R.string.dosage_concentration_screen),
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
             Text(
-                text = "m = Masa del animal",
+                text = stringResource(id = R.string.dosage_mass_screen),
                 Modifier.padding(start = 25.dp),
                 fontSize = 20.sp
             )
@@ -154,7 +167,7 @@ fun DosageScreen() {
                         requiredDosePerKg = newValue
                     }
                 },
-                label = { Text(text = "Ingrese la Dosis requerida [mg/kg]:") },
+                label = { Text(stringResource(id = R.string.input_dosage_r)) },
                 maxLines = 1,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
@@ -169,7 +182,7 @@ fun DosageScreen() {
                         drugConcentration = newValue
                     }
                 },
-                label = { Text(text = "Ingrese la Concentración del fármaco [mg/ml]:") },
+                label = { Text(stringResource(id = R.string.input_dosage_concentration)) },
                 maxLines = 1,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
@@ -184,7 +197,7 @@ fun DosageScreen() {
                         animalWeight = newValue
                     }
                 },
-                label = { Text(text = "Ingrese la Masa del animal [kg]:") },
+                label = { Text(stringResource(id = R.string.input_dosage_mass)) },
                 maxLines = 1,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
@@ -193,7 +206,7 @@ fun DosageScreen() {
             Spacer(modifier = Modifier.height(20.dp))
 
             drugDose.let {
-                if (it == "MISSING_DOSEPERKG") {
+                if (it == MISSING_DOSEPERKG) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -201,9 +214,9 @@ fun DosageScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la dosis requerida.")
+                        Text(stringResource(id = R.string.error_dosage_r))
                     }
-                } else if (it == "MISSING_DRUGCONCENTRATION") {
+                } else if (it == MISSING_DRUGCONCENTRATION) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -211,9 +224,9 @@ fun DosageScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la concentración del fármaco.")
+                        Text(stringResource(id = R.string.error_dosage_concentration))
                     }
-                } else if (it == "MISSING_DOSEPERKG_DRUGCONCENTRATION") {
+                } else if (it == MISSING_DOSEPERKG_DRUGCONCENTRATION) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -221,9 +234,9 @@ fun DosageScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la dosis requerida y la concentración del fármaco.")
+                        Text(stringResource(id = R.string.error_dosage_r_concentration))
                     }
-                } else if (it == "MISSING_DOSEPERKG_ANIMALWEIGHT") {
+                } else if (it == MISSING_DOSEPERKG_ANIMALWEIGHT) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -231,9 +244,9 @@ fun DosageScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la dosis requerida y la masa del animal.")
+                        Text(stringResource(id = R.string.error_dosage_r_mass))
                     }
-                } else if (it == "MISSING_DRUGCONCENTRATION_ANIMALWEIGHT") {
+                } else if (it == MISSING_DRUGCONCENTRATION_ANIMALWEIGHT) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -241,9 +254,9 @@ fun DosageScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la concentración del fármaco y la masa del animal.")
+                        Text(stringResource(id = R.string.error_dosage_concentration_mass))
                     }
-                } else if (it == "MISSING_ANIMALWEIGHT") {
+                } else if (it == MISSING_ANIMALWEIGHT) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -251,9 +264,9 @@ fun DosageScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la masa del animal.")
+                        Text(stringResource(id = R.string.error_dosage_mass))
                     }
-                } else if (it == "DIVISION_BY_ZERO") {
+                } else if (it == DIVISION_BY_ZERO) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -261,9 +274,9 @@ fun DosageScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("No se puede dividir entre cero.")
+                        Text(stringResource(id = R.string.division_by_zero))
                     }
-                } else if (it == "MISSING_BOTH") {
+                } else if (it == MISSING_BOTH) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -271,11 +284,11 @@ fun DosageScreen() {
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Por favor, ingrese la dosis requerida, la concentración del fármaco y la masa del animal.")
+                        Text(stringResource(id = R.string.error_dosage_r_concentration_mass))
                     }
                 } else if (it.isNotEmpty()) {
                     Text(
-                        text = "Dosis de fármaco: $it [mL]",
+                        text = stringResource(id = R.string.dosage_result, it),
                         fontSize = 20.sp,
                         modifier = Modifier
                             .fillMaxWidth()
@@ -294,16 +307,16 @@ fun DosageScreen() {
                     val animalWeightValue = animalWeight.toFloatOrNull()
 
                     drugDose = when {
-                        requiredDosePerKg.isBlank() && drugConcentration.isBlank() && animalWeight.isBlank() -> "MISSING_BOTH"
-                        requiredDosePerKg.isBlank() && drugConcentration.isBlank() -> "MISSING_DOSEPERKG_DRUGCONCENTRATION"
-                        requiredDosePerKg.isBlank() && animalWeight.isBlank() -> "MISSING_DOSEPERKG_ANIMALWEIGHT"
-                        drugConcentration.isBlank() && animalWeight.isBlank() -> "MISSING_DRUGCONCENTRATION_ANIMALWEIGHT"
-                        requiredDosePerKg.isBlank() -> "MISSING_DOSEPERKG"
-                        drugConcentration.isBlank() -> "MISSING_DRUGCONCENTRATION"
-                        animalWeight.isBlank() -> "MISSING_ANIMALWEIGHT"
-                        drugConcentrationValue == 0f -> "DIVISION_BY_ZERO"
+                        requiredDosePerKg.isBlank() && drugConcentration.isBlank() && animalWeight.isBlank() -> MISSING_BOTH
+                        requiredDosePerKg.isBlank() && drugConcentration.isBlank() -> MISSING_DOSEPERKG_DRUGCONCENTRATION
+                        requiredDosePerKg.isBlank() && animalWeight.isBlank() -> MISSING_DOSEPERKG_ANIMALWEIGHT
+                        drugConcentration.isBlank() && animalWeight.isBlank() -> MISSING_DRUGCONCENTRATION_ANIMALWEIGHT
+                        requiredDosePerKg.isBlank() -> MISSING_DOSEPERKG
+                        drugConcentration.isBlank() -> MISSING_DRUGCONCENTRATION
+                        animalWeight.isBlank() -> MISSING_ANIMALWEIGHT
+                        drugConcentrationValue == 0f -> DIVISION_BY_ZERO
                         requiredDosePerKgValue != null && drugConcentrationValue != null && animalWeightValue != null -> String.format(Locale.US, "%.3f", (requiredDosePerKgValue/drugConcentrationValue)*animalWeightValue)
-                        else -> "MISSING_BOTH"
+                        else -> MISSING_BOTH
                     }
                 },
                 colors = ButtonDefaults.buttonColors(
@@ -315,7 +328,7 @@ fun DosageScreen() {
                     .align(Alignment.CenterHorizontally)
                     .fillMaxWidth()
             ) {
-                Text(text = "Calcular Dosis de Fármaco")
+                Text(text = stringResource(id = R.string.calculate_dosage))
             }
         }
     }

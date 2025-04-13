@@ -34,6 +34,7 @@
     <!-- Multiple Screens -->
     <string name="label_where">En dónde:</string>
     <string name="division_by_zero">No se puede dividir entre cero.</string>
+    <string name="equal">=</string>
 
     <!-- DensityScreen.kt-->
     <string name="form_density">Fórmula de la Densidad</string>
@@ -52,6 +53,27 @@
     <string name="density_result">Densidad: %1$s [kg/m³]</string>
 
     <!-- DosageScreen.kt-->
+    <string name="form_dosage">Fórmula de la Dosis del Fármaco</string>
+    <string name="dosage_letter">D</string>
+    <string name="dosage_r">Dᵣ</string>
+    <string name="concentration">Cᶠ</string>
+    <string name="dosage_screen">D  = Dosis de fármaco</string>
+    <string name="dosage_r_screen">Dᵣ = Dosis requerida</string>
+    <string name="dosage_concentration_screen">Cᶠ = Concentración del fármaco</string>
+    <string name="dosage_mass_screen">m = Masa del animal</string>
+    <string name="input_dosage_r">Ingrese la Dosis requerida [mg/kg]:</string>
+    <string name="input_dosage_concentration">Ingrese la Concentración del fármaco [mg/ml]:</string>
+    <string name="input_dosage_mass">Ingrese la Masa del animal [kg]:</string>
+
+    <string name="error_dosage_r">Por favor, ingrese la dosis requerida.</string>
+    <string name="error_dosage_concentration">Por favor, ingrese la concentración del fármaco.</string>
+    <string name="error_dosage_r_concentration">Por favor, ingrese la dosis requerida y la concentración del fármaco.</string>
+    <string name="error_dosage_r_mass">Por favor, ingrese la dosis requerida y la masa del animal.</string>
+    <string name="error_dosage_concentration_mass">Por favor, ingrese la concentración del fármaco y la masa del animal.</string>
+    <string name="error_dosage_mass">Por favor, ingrese la masa del animal.</string>
+    <string name="error_dosage_r_concentration_mass">Por favor, ingrese la dosis requerida, la concentración del fármaco y la masa del animal.</string>
+    <string name="dosage_result">Dosis de fármaco: %1$s [mL]</string>
+    <string name="calculate_dosage">Calcular Dosis de Fármaco</string>
 
     <!-- KineticEnergyScreen.kt-->
 
