@@ -19,7 +19,7 @@ fun NavigationHost (
         startDestination = Routes.LeyOhm.route
     ) {
         composable(Routes.LeyOhm.route) { LeyOhmScreen() }
-        composable(Routes.Ensilar.route) { EnsilarScreen() }
+        composable(Routes.Dosis.route) { EnsilarScreen() }
         composable(Routes.EnergiaCinetica.route) { EnergiaCineticaScreen() }
         composable(Routes.Densidad.route) { DensidadScreen() }
         composable(Routes.AcercaDe.route) { AcercaDeScreen() }

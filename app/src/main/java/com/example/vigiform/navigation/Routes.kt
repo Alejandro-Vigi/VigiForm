@@ -5,7 +5,7 @@ sealed class Routes (
 ) {
     data object LeyOhm: Routes("leyOhm")
     data object EnergiaCinetica: Routes("energiaCinetica")
-    data object Ensilar: Routes("ensilar")
+    data object Dosis: Routes("dosis")
     data object Densidad: Routes("densidad")
     data object AcercaDe: Routes("acercaDe")
 }

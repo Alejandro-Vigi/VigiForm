@@ -15,7 +15,7 @@ data class Item(
 object Items {
     val items = arrayOf(
         Item("Ley Ohm", false, Electric_bolt, "LeyOhm", Routes.LeyOhm.route),
-        Item("Ensilar", false, Dog, "Ensilar", Routes.Ensilar.route),
+        Item("Dosis", false, Dog, "Dosis", Routes.Dosis.route),
         Item("Energia Cinetica", false, TestTubeDiagonal, "EnergiaCinetica", Routes.EnergiaCinetica.route),
         Item("Densidad", false, FlaskConical, "Densidad", Routes.Densidad.route),
         Item("Acerca de", false, Icons.Default.Info, "Densidad", Routes.AcercaDe.route)
