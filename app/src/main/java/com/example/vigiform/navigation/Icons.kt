@@ -9,7 +9,25 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-// Vector 1
+/**
+ * ES: Este archivo define varios íconos vectoriales personalizados (ImageVector) usando Jetpack Compose.
+ * Obtenidos de Compose Icons: https://composeicons.com/.
+ * Cada vector representa un ícono único como un perro, un rayo eléctrico, un tubo de ensayo o un matraz cónico.
+ * Los íconos se definen mediante instrucciones de trazado de ruta y se almacenan en variables privadas
+ * para ser inicializados solo una vez (inicialización perezosa).
+ *
+ * EN: This file defines several custom vector icons (ImageVector) using Jetpack Compose.
+ * Each vector represents a unique icon such as a dog, electric bolt, test tube, or conical flask.
+ * The icons are defined through path drawing instructions and stored as private variables
+ * to be initialized only once (lazy initialization).
+ *
+ */
+
+/** Vector 1
+ * 🐶 Perro / Dog
+ * ES: Representa un perro. Útil para secciones de mascotas, veterinarias o temas animales.
+ * EN: Represents a dog. Useful for pet sections, vet services, or animal-related topics.
+ */
 
 val Dog: ImageVector
     get() {
@@ -112,8 +130,11 @@ val Dog: ImageVector
 
 private var Dog_private: ImageVector? = null
 
-
-// Vector 2
+/** Vector 2
+ * ⚡ Rayo eléctrico / Electric Bolt
+ * ES: Simboliza electricidad, energía, potencia o peligro eléctrico.
+ * EN: Symbolizes electricity, energy, power, or electrical hazard.
+ */
 
 val Electric_bolt: ImageVector
     get() {
@@ -162,7 +183,11 @@ val Electric_bolt: ImageVector
 
 private var Electric_bolt_private: ImageVector? = null
 
-// Vector 3
+/** Vector 3
+ * 🧪 Tubo de ensayo en diagonal / Diagonal Test Tube
+ * ES: Ícono de tubo de ensayo inclinado. Relacionado con química, ciencia o experimentación.
+ * EN: Icon of a tilted test tube. Related to chemistry, science, or experimentation.
+ */
 
 val TestTubeDiagonal: ImageVector
     get() {
@@ -227,7 +252,11 @@ val TestTubeDiagonal: ImageVector
 
 private var TestTubeDiagonal_private: ImageVector? = null
 
-// Vector 4
+/** Vector 4
+ * 🧫 Matraz cónico / Conical Flask
+ * ES: Representa un matraz Erlenmeyer, típico de laboratorios. Indica ciencia o análisis.
+ * EN: Represents an Erlenmeyer flask, typical in labs. Indicates science or analysis.
+ */
 
 val FlaskConical: ImageVector
     get() {
@@ -297,7 +326,11 @@ val FlaskConical: ImageVector
 
 private var FlaskConical_private: ImageVector? = null
 
-// Vector 5
+/** Vector 5
+ * 📷 Instagram
+ * ES: Ícono de Instagram. Útil para enlaces a redes sociales, perfiles personales o contacto visual.
+ * EN: Instagram icon. Useful for social media links, personal profiles, or visual branding.
+ */
 
 val Instagram: ImageVector
     get() {
@@ -391,7 +424,11 @@ val Instagram: ImageVector
 
 private var Instagram_private: ImageVector? = null
 
-// Vector 6
+/** Vector 6
+ * 💼 LinkedIn
+ * ES: Ícono de LinkedIn. Ideal para mostrar información profesional, CVs o networking laboral.
+ * EN: LinkedIn icon. Great for showcasing professional info, resumes, or work-related networking.
+ */
 
 val LinkedinLogo: ImageVector
     get() {
@@ -463,8 +500,11 @@ val LinkedinLogo: ImageVector
 
 private var LinkedinLogo_private: ImageVector? = null
 
-
-// Vector 7
+/** Vector 7
+ * 🐙 GitHub
+ * ES: Ícono de GitHub. Representa proyectos de código, colaboraciones y portafolios de desarrollo.
+ * EN: GitHub icon. Represents code projects, collaboration, and development portfolios.
+ */
 
 val Github: ImageVector
     get() {

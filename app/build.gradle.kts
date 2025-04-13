@@ -41,8 +41,16 @@ android {
 
 dependencies {
 
-    // Agregando dependencia de navegacion para compose
-    implementation("androidx.navigation:navigation-compose:2.8.9")
+    /**
+     * ES: Dependencia de navegación para Jetpack Compose. Permite integrar la navegación entre pantallas
+     * utilizando el sistema de navegación de Compose, lo que facilita la creación de rutas y pantallas
+     * dentro de la aplicación sin tener que usar actividades o fragmentos tradicionales.
+     *
+     * EN: Navigation dependency for Jetpack Compose. It enables screen navigation by integrating
+     * the Jetpack Navigation system with Compose, allowing the creation of routes and screens within the app
+     * without the need for traditional activities or fragments.
+     */
+    implementation(libs.androidx.navigation.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

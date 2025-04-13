@@ -10,6 +10,17 @@ import androidx.navigation.NavController
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
+/**
+ * ES: DrawerItems es una función composable que representa un ítem dentro del menú lateral (Drawer)
+ * de una aplicación en Jetpack Compose. Nos permite mostrar un texto, un ícono y manejar la navegación
+ * hacia una ruta específica cuando el usuario lo selecciona. Además, se encarga de cerrar el Drawer
+ * automáticamente usando corrutinas. También indica visualmente si el ítem está seleccionado.
+ *
+ * EN: DrawerItems is a composable function that represents an item inside the side navigation menu (Drawer)
+ * in a Jetpack Compose app. It displays a label, an icon, and handles navigation to a specific route
+ * when clicked. It also automatically closes the Drawer using coroutines, and visually indicates
+ * whether the item is currently selected.
+ */
 
 @Composable
 fun DrawerItems(
