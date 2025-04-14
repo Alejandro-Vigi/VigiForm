@@ -12,7 +12,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.vigiform.navigation.getInstagram
@@ -23,6 +22,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.core.net.toUri
@@ -94,7 +94,7 @@ fun AboutScreen() {
                     .padding(vertical = 16.dp)
                     .fillMaxWidth(0.8f),
                 thickness = 1.dp,
-                color = Color.Black
+                color = colorResource(id = R.color.black)
             )
 
             Row (
@@ -110,7 +110,7 @@ fun AboutScreen() {
                                 instagramUrl.toUri())
                             context.startActivity(intent)
                         },
-                    tint = Color.Black
+                    tint = colorResource(id = R.color.black)
                 )
                 Spacer(modifier = Modifier.height(20.dp))
                 Icon(
@@ -123,7 +123,7 @@ fun AboutScreen() {
                                 linkedinUrl.toUri())
                             context.startActivity(intent)
                         },
-                    tint = Color.Black
+                    tint = colorResource(id = R.color.black)
                 )
                 Spacer(modifier = Modifier.height(20.dp))
                 Icon(
@@ -136,7 +136,7 @@ fun AboutScreen() {
                                 githubUrl.toUri())
                             context.startActivity(intent)
                         },
-                    tint = Color.Black
+                    tint = colorResource(id = R.color.black)
                 )
             }
 

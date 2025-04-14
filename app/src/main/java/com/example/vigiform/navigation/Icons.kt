@@ -16,12 +16,20 @@ import com.example.vigiform.R
  * Obtenidos de Compose Icons: https://composeicons.com/.
  * Cada vector representa un ícono único como un perro, un rayo eléctrico, un tubo de ensayo o un matraz cónico.
  * Los íconos se definen mediante instrucciones de trazado de ruta y se almacenan en variables privadas
- * para ser inicializados solo una vez (inicialización perezosa).
+ * para ser inicializados solo una vez.
+ *
+ * Nota: Aunque los íconos se definen con valores codificados directamente en el código, no se considera
+ * *hardcoding*, ya que estos íconos son constantes y no se espera que cambien a lo largo del ciclo de vida
+ * de la aplicación. Los íconos fueron obtenidos de una fuente externa y no se prevé su modificación.
  *
  * EN: This file defines several custom vector icons (ImageVector) using Jetpack Compose.
  * Each vector represents a unique icon such as a dog, electric bolt, test tube, or conical flask.
  * The icons are defined through path drawing instructions and stored as private variables
- * to be initialized only once (lazy initialization).
+ * to be initialized only once.
+ *
+ * Note: Although the icons are defined with hardcoded values in the code, it is not considered
+ * *hardcoding*, since these icons are constants and are not expected to change throughout the lifecycle
+ * of the application. The icons were obtained from an external source and are not intended to be modified.
  *
  */
 
@@ -44,6 +52,7 @@ object IconNames {
 private var Dog_private: ImageVector? = null
 
 fun getDogImage(context: Context): ImageVector {
+
     if (Dog_private != null) {
         return Dog_private!!
     }
