@@ -57,21 +57,35 @@ Las traducciones están organizadas desde el `translations editor` para asegurar
 
 ## 🛠️ Estructura del Proyecto
 ```plaintext
-app/
-├── src/
-│   ├── main/
-│   │   ├── java/com/example/vigiform/
-│   │   │   ├── navigation/
-│   │   │   ├── screens/
-│   │   │   ├── theme/
-│   │   │   └── MainActivity.kt
-│   │   └── res/
-│   │       ├── values/
-│   │       ├── values-en/
-│   │       ├── values-ja/
-│   │       └── values-ru/
-├── build.gradle.kts
-└── Gradle Scripts/
-    ├── build.gradle.kts (Project: VigiForm)
-    └── build.gradle.kts (Module: app)
-
+app
+├── manifests
+├── kotlin+java
+│ ├── com.example.vigiform
+│ │ ├── navigation
+│ │ ├── DrawerItems.kt ✓
+│ │ ├── icons.kt ✓
+│ │ ├── items.kt ✓
+│ │ ├── NavigationHost.kt ✓
+│ │ └── Routes
+├── screens
+│ ├── AboutScreen.kt ✓
+│ ├── DensityScreen.kt ✓
+│ ├── DosageScreen.kt ✓
+│ ├── KineticEnergyScreen.kt ✓
+│ └── OhmsLawScreen.kt ✓
+├── ui.theme
+│ └── MainActivity.kt ✓
+├── res
+├── font (4)
+| ├── josefinsans_bold.ttf
+| ├── josefinsans_light.ttf
+| ├── josefinsans_medium.ttf
+| ├── josefinsans_regular.ttf
+├──── values
+│ ├── colors.xml ✓
+│ ├── ic_launcher_background.xml ✓
+├── strings (4)
+│ ├── strings.xml ✓
+│ ├── strings.xml (en) ✓
+│ ├── strings.xml (ja) ✓
+│ ├── strings.xml (ru) ✓
