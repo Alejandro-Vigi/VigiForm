@@ -33,6 +33,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
@@ -79,7 +80,7 @@ fun NavDrawer() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(64.dp)
-                        .background(Color(122, 98, 156))
+                        .background(colorResource(id = R.color.purple_default))
                 ) {
                 }
 
@@ -138,7 +139,7 @@ fun NavDrawer() {
                         }
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
-                        containerColor = Color(122, 98, 156),
+                        containerColor = colorResource(id = R.color.purple_default),
                         titleContentColor = Color.White,
                         navigationIconContentColor = Color.White,
                         actionIconContentColor = Color.White

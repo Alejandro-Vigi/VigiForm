@@ -117,4 +117,7 @@
     <string name="share">Compartir</string>
     <string name="share_link2">https://github.com/Alejandro-Vigi/VigiForm</string>
 
+    <!-- Colores -->
+    <color name="purple_default">#7A629C</color>
+
 </resources>
