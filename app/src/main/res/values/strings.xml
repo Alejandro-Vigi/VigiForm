@@ -1,23 +1,23 @@
 <resources>
-    <string name="app_name">VigiForm</string>
+    <string name="app_name" translatable="false">VigiForm</string>
 
     <!-- Items.kt -->
-    <string name="ohms_law">Ohms Law</string>
-    <string name="dosage">Dosage</string>
-    <string name="kinetic_energy">Kinetic Energy</string>
-    <string name="density">Density</string>
-    <string name="about">About</string>
-    <string name="ohms_law2">OhmsLaw</string>
-    <string name="kinetic_energy2">KineticEnergy</string>
+    <string name="ohms_law">Ley de Ohm</string>
+    <string name="dosage">Dosificación</string>
+    <string name="kinetic_energy">Energía Cinética</string>
+    <string name="density">Densidad</string>
+    <string name="about">Acerca de</string>
+    <string name="ohms_law2" translatable="false">LeyOhm</string>
+    <string name="kinetic_energy2" translatable="false">EnergíaCinética</string>
 
     <!-- Icons.kt -->
-    <string name="dog">Dog</string>
-    <string name="electricBolt">Electric_bolt</string>
-    <string name="testTube_diagonal">TestTubeDiagonal</string>
-    <string name="flaskConical">FlaskConical</string>
-    <string name="instagram">Instagram</string>
-    <string name="linkedin">LinkedinLogo</string>
-    <string name="github">Github</string>
+    <string name="dog" translatable="false">Dog</string>
+    <string name="electricBolt" translatable="false">Electric_bolt</string>
+    <string name="testTube_diagonal" translatable="false">TestTubeDiagonal</string>
+    <string name="flaskConical" translatable="false">FlaskConical</string>
+    <string name="instagram" translatable="false">Instagram</string>
+    <string name="linkedin" translatable="false">LinkedinLogo</string>
+    <string name="github" translatable="false">Github</string>
 
     <!-- AboutScreen.kt-->
     <string name="icon_description">Icono de fórmula</string>
@@ -25,22 +25,22 @@
     <string name="faculty">Facultad de Ingeniería - 2025 ©</string>
     <string name="version">Version: 1.0</string>
     <string name="instagram_description">Instagram Icon</string>
-    <string name="url_instagram">https://www.instagram.com/alejandro_vigi</string>
+    <string name="url_instagram" translatable="false">https://www.instagram.com/alejandro_vigi</string>
     <string name="linkedin_description">LinkedIn Icon</string>
-    <string name="url_linkedin">https://www.linkedin.com/in/alejandro-vigi/</string>
+    <string name="url_linkedin" translatable="false">https://www.linkedin.com/in/alejandro-vigi/</string>
     <string name="github_description">Github Icon</string>
-    <string name="url_github">https://github.com/Alejandro-Vigi</string>
+    <string name="url_github" translatable="false">https://github.com/Alejandro-Vigi</string>
 
     <!-- Multiple Screens -->
     <string name="label_where">En dónde:</string>
     <string name="division_by_zero">No se puede dividir entre cero.</string>
-    <string name="equal">=</string>
+    <string name="equal" translatable="false">=</string>
 
     <!-- DensityScreen.kt-->
     <string name="form_density">Fórmula de la Densidad</string>
-    <string name="density_letter">ρ =</string>
-    <string name="mass_leter">m</string>
-    <string name="volume_letter">V</string>
+    <string name="density_letter" translatable="false">ρ =</string>
+    <string name="mass_leter" translatable="false">m</string>
+    <string name="volume_letter" translatable="false">V</string>
     <string name="density_screen">ρ  =  Densidad</string>
     <string name="mass">m =  Masa</string>
     <string name="volume">V  =  Volumen</string>
@@ -54,9 +54,9 @@
 
     <!-- DosageScreen.kt-->
     <string name="form_dosage">Fórmula de la Dosis del Fármaco</string>
-    <string name="dosage_letter">D</string>
-    <string name="dosage_r">Dᵣ</string>
-    <string name="concentration">Cᶠ</string>
+    <string name="dosage_letter" translatable="false">D</string>
+    <string name="dosage_r" translatable="false">Dᵣ</string>
+    <string name="concentration" translatable="false">Cᶠ</string>
     <string name="dosage_screen">D  = Dosis de fármaco</string>
     <string name="dosage_r_screen">Dᵣ = Dosis requerida</string>
     <string name="dosage_concentration_screen">Cᶠ = Concentración del fármaco</string>
@@ -77,10 +77,10 @@
 
     <!-- KineticEnergyScreen.kt-->
     <string name="form_kinetic_energy">Fórmula de la Energía Cinética</string>
-    <string name="kinetic_letter">Eₖ</string>
-    <string name="one">1</string>
-    <string name="two">2</string>
-    <string name="mv2">mv²</string>
+    <string name="kinetic_letter" translatable="false">Eₖ</string>
+    <string name="one" translatable="false">1</string>
+    <string name="two" translatable="false">2</string>
+    <string name="mv2" translatable="false">mv²</string>
     <string name="kinetic">E  = Energía cinética</string>
     <string name="kinetic_mass">m = Masa</string>
     <string name="kinetic_velocity">v  = Velocidad</string>
@@ -93,9 +93,9 @@
 
     <!-- OhmsLawScreen.kt-->
     <string name="form_ohm">Fórmulas Ley de Ohm</string>
-    <string name="ohm_one">V = I × R</string>
-    <string name="ohm_two">I = V / R</string>
-    <string name="ohm_three">R = V / I</string>
+    <string name="ohm_one" translatable="false">V = I × R</string>
+    <string name="ohm_two" translatable="false">I = V / R</string>
+    <string name="ohm_three" translatable="false">R = V / I</string>
     <string name="ohm_current">Corriente [A]</string>
     <string name="ohm_resistance">Resistencia [Ω]</string>
     <string name="ohm_voltage">Voltaje [V]</string>
@@ -115,6 +115,6 @@
     <string name="menu">Menú</string>
     <string name="share_link">Compartir enlace</string>
     <string name="share">Compartir</string>
-    <string name="share_link2">https://github.com/Alejandro-Vigi/VigiForm</string>
+    <string name="share_link2" translatable="false">https://github.com/Alejandro-Vigi/VigiForm</string>
 
 </resources>

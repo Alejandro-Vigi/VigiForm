@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VigiForm</string>
+    <string name="ohms_law">オームの法則</string>
+    <string name="dosage">投薬量</string>
+    <string name="kinetic_energy">運動エネルギー</string>
+    <string name="density">密度</string>
+    <string name="about">について</string>
+    <string name="icon_description">式アイコン</string>
+    <string name="autor">作成者: Vigi Garduño Marco Alejandro</string>
+    <string name="faculty">工学部 - 2025 ©</string>
+    <string name="version">バージョン: 1.0</string>
+    <string name="instagram_description">Instagram アイコン</string>
+    <string name="linkedin_description">LinkedIn アイコン</string>
+    <string name="github_description">Github アイコン</string>
+    <string name="label_where">ここで:</string>
+    <string name="division_by_zero">ゼロで割ることはできません。</string>
+    <string name="form_density">密度の公式</string>
+    <string name="density_screen">ρ = 密度</string>
+    <string name="mass">m = 質量</string>
+    <string name="volume">V = 体積</string>
+    <string name="input_mass">質量を入力 [kg]:</string>
+    <string name="input_volume">体積を入力 [m³]:</string>
+    <string name="error_mass">質量を入力してください。</string>
+    <string name="error_volume">体積を入力してください。</string>
+    <string name="error_mass_volume">質量と体積を入力してください。</string>
+    <string name="calculate_density">密度を計算</string>
+    <string name="density_result">密度: %1$s [kg/m³]</string>
+    <string name="form_dosage">薬物投与量の公式</string>
+    <string name="dosage_screen">D = 薬物投与量</string>
+    <string name="dosage_r_screen">Dᵣ = 必要投与量</string>
+    <string name="dosage_concentration_screen">Cᶠ = 薬物濃度</string>
+    <string name="dosage_mass_screen">m = 動物の質量</string>
+    <string name="input_dosage_r">必要投与量を入力 [mg/kg]:</string>
+    <string name="input_dosage_concentration">薬物濃度を入力 [mg/ml]:</string>
+    <string name="input_dosage_mass">動物の質量を入力 [kg]:</string>
+    <string name="error_dosage_r">必要投与量を入力してください。</string>
+    <string name="error_dosage_concentration">薬物濃度を入力してください。</string>
+    <string name="error_dosage_r_concentration">必要投与量と薬物濃度を入力してください。</string>
+    <string name="error_dosage_r_mass">必要投与量と動物の質量を入力してください。</string>
+    <string name="error_dosage_concentration_mass">薬物濃度と動物の質量を入力してください。</string>
+    <string name="error_dosage_mass">動物の質量を入力してください。</string>
+    <string name="error_dosage_r_concentration_mass">必要投与量、薬物濃度、動物の質量を入力してください。</string>
+    <string name="dosage_result">薬物投与量: %1$s [mL]</string>
+    <string name="calculate_dosage">薬物投与量を計算</string>
+    <string name="form_kinetic_energy">運動エネルギーの公式</string>
+    <string name="kinetic">E = 運動エネルギー</string>
+    <string name="kinetic_mass">m = 質量</string>
+    <string name="kinetic_velocity">v = 速度</string>
+    <string name="input_kinetic_mass">質量を入力 [kg]</string>
+    <string name="input_kinetic_velocity">速度を入力 [m/s]:</string>
+    <string name="error_velocity">速度を入力してください。</string>
+    <string name="error_mass_velocity">質量と速度を入力してください。</string>
+    <string name="kinetic_result">運動エネルギー: %1$s [J]</string>
+    <string name="calculate_kinetic">運動エネルギーを計算</string>
+    <string name="form_ohm">オームの法則の公式</string>
+    <string name="ohm_current">電流 [A]</string>
+    <string name="ohm_resistance">抵抗 [Ω]</string>
+    <string name="ohm_voltage">電圧 [V]</string>
+    <string name="error_current">電流を入力してください。</string>
+    <string name="error_resistance">抵抗を入力してください。</string>
+    <string name="error_voltage">電圧を入力してください。</string>
+    <string name="error_current_resistance">電流と抵抗を入力してください。</string>
+    <string name="error_voltage_resistance">電圧と抵抗を入力してください。</string>
+    <string name="error_voltage_current">電圧と電流を入力してください。</string>
+    <string name="result_voltage">電圧 = %.2f [V]</string>
+    <string name="result_current">電流 = %.2f [A]</string>
+    <string name="result_resistance">抵抗 = %.2f [Ω]</string>
+    <string name="calculate_ohm">計算</string>
+    <string name="app_name_autor">VigiForm - 計算機</string>
+    <string name="menu">メニュー</string>
+    <string name="share_link">リンクを共有</string>
+    <string name="share">共有</string>
+</resources>

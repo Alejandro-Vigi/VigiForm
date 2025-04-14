@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ohms_law">Ohm\'s Law</string>
+    <string name="dosage">Dosage</string>
+    <string name="kinetic_energy">Kinetic Energy</string>
+    <string name="density">Density</string>
+    <string name="about">About</string>
+    <string name="icon_description">Formula Icon</string>
+    <string name="autor">Created by: Vigi Garduño Marco Alejandro</string>
+    <string name="faculty">Faculty of Engineering - 2025 ©</string>
+    <string name="version">Version: 1.0</string>
+    <string name="instagram_description">Instagram Icon</string>
+    <string name="linkedin_description">LinkedIn Icon</string>
+    <string name="github_description">Github Icon</string>
+    <string name="label_where">Where:</string>
+    <string name="division_by_zero">Cannot divide by zero.</string>
+    <string name="form_density">Density Formula</string>
+    <string name="density_screen">ρ = Density</string>
+    <string name="mass">m = Mass</string>
+    <string name="volume">V = Volume</string>
+    <string name="input_mass">Enter Mass [kg]:</string>
+    <string name="input_volume">Enter Volume [m³]:</string>
+    <string name="error_mass">Please enter the mass.</string>
+    <string name="error_volume">Please enter the volume.</string>
+    <string name="error_mass_volume">Please enter the mass and volume.</string>
+    <string name="calculate_density">Calculate Density</string>
+    <string name="density_result">Density: %1$s [kg/m³]</string>
+    <string name="form_dosage">Drug Dosage Formula</string>
+    <string name="dosage_screen">D = Drug dose</string>
+    <string name="dosage_r_screen">Dᵣ = Required dose</string>
+    <string name="dosage_concentration_screen">Cᶠ = Drug concentration</string>
+    <string name="dosage_mass_screen">m = Animal mass</string>
+    <string name="input_dosage_r">Enter Required dose [mg/kg]:</string>
+    <string name="input_dosage_concentration">Enter Drug concentration [mg/ml]:</string>
+    <string name="input_dosage_mass">Enter Animal mass [kg]:</string>
+    <string name="error_dosage_r">Please enter the required dose.</string>
+    <string name="error_dosage_concentration">Please enter the drug concentration.</string>
+    <string name="error_dosage_r_concentration">Please enter the required dose and drug concentration.</string>
+    <string name="error_dosage_r_mass">Please enter the required dose and animal mass.</string>
+    <string name="error_dosage_concentration_mass">Please enter the drug concentration and animal mass.</string>
+    <string name="error_dosage_mass">Please enter the animal mass.</string>
+    <string name="error_dosage_r_concentration_mass">Please enter the required dose, drug concentration and animal mass.</string>
+    <string name="dosage_result">Drug dose: %1$s [mL]</string>
+    <string name="calculate_dosage">Calculate Drug Dose</string>
+    <string name="form_kinetic_energy">Kinetic Energy Formula</string>
+    <string name="kinetic">E = Kinetic energy</string>
+    <string name="kinetic_mass">m = Mass</string>
+    <string name="kinetic_velocity">v = Velocity</string>
+    <string name="input_kinetic_mass">Enter Mass [kg]</string>
+    <string name="input_kinetic_velocity">Enter Velocity [m/s]:</string>
+    <string name="error_velocity">Please enter the velocity.</string>
+    <string name="error_mass_velocity">Please enter the mass and velocity.</string>
+    <string name="kinetic_result">Kinetic energy: %1$s [J]</string>
+    <string name="calculate_kinetic">Calculate Kinetic Energy</string>
+    <string name="form_ohm">Ohm\'s Law Formulas</string>
+    <string name="ohm_current">Current [A]</string>
+    <string name="ohm_resistance">Resistance [Ω]</string>
+    <string name="ohm_voltage">Voltage [V]</string>
+    <string name="error_current">Please enter the current.</string>
+    <string name="error_resistance">Please enter the resistance.</string>
+    <string name="error_voltage">Please enter the voltage.</string>
+    <string name="error_current_resistance">Please enter the current and resistance.</string>
+    <string name="error_voltage_resistance">Please enter the voltage and resistance.</string>
+    <string name="error_voltage_current">Please enter the voltage and current.</string>
+    <string name="result_voltage">Voltage = %.2f [V]</string>
+    <string name="result_current">Current = %.2f [A]</string>
+    <string name="result_resistance">Resistance = %.2f [Ω]</string>
+    <string name="calculate_ohm">Calculate</string>
+    <string name="app_name_autor">VigiForm - Calculator</string>
+    <string name="menu">Menu</string>
+    <string name="share_link">Share link</string>
+    <string name="share">Share</string>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VigiForm</string>
+    <string name="ohms_law">Закон Ома</string>
+    <string name="dosage">Дозировка</string>
+    <string name="kinetic_energy">Кинетическая энергия</string>
+    <string name="density">Плотность</string>
+    <string name="about">О программе</string>
+    <string name="icon_description">Иконка формулы</string>
+    <string name="autor">Создано: Vigi Garduño Marco Alejandro</string>
+    <string name="faculty">Инженерный факультет - 2025 ©</string>
+    <string name="version">Версия: 1.0</string>
+    <string name="instagram_description">Иконка Instagram</string>
+    <string name="linkedin_description">Иконка LinkedIn</string>
+    <string name="github_description">Иконка Github</string>
+    <string name="label_where">Где:</string>
+    <string name="division_by_zero">Нельзя делить на ноль.</string>
+    <string name="form_density">Формула плотности</string>
+    <string name="density_screen">ρ = Плотность</string>
+    <string name="mass">m = Масса</string>
+    <string name="volume">V = Объём</string>
+    <string name="input_mass">Введите массу [кг]:</string>
+    <string name="input_volume">Введите объём [м³]:</string>
+    <string name="error_mass">Пожалуйста, введите массу.</string>
+    <string name="error_volume">Пожалуйста, введите объём.</string>
+    <string name="error_mass_volume">Пожалуйста, введите массу и объём.</string>
+    <string name="calculate_density">Рассчитать плотность</string>
+    <string name="density_result">Плотность: %1$s [кг/м³]</string>
+    <string name="form_dosage">Формула дозировки лекарства</string>
+    <string name="dosage_screen">D = Доза лекарства</string>
+    <string name="dosage_r_screen">Dᵣ = Требуемая доза</string>
+    <string name="dosage_concentration_screen">Cᶠ = Концентрация лекарства</string>
+    <string name="dosage_mass_screen">m = Масса животного</string>
+    <string name="input_dosage_r">Введите требуемую дозу [мг/кг]:</string>
+    <string name="input_dosage_concentration">Введите концентрацию лекарства [мг/мл]:</string>
+    <string name="input_dosage_mass">Введите массу животного [кг]:</string>
+    <string name="error_dosage_r">Пожалуйста, введите требуемую дозу.</string>
+    <string name="error_dosage_concentration">Пожалуйста, введите концентрацию лекарства.</string>
+    <string name="error_dosage_r_concentration">Пожалуйста, введите требуемую дозу и концентрацию лекарства.</string>
+    <string name="error_dosage_r_mass">Пожалуйста, введите требуемую дозу и массу животного.</string>
+    <string name="error_dosage_concentration_mass">Пожалуйста, введите концентрацию лекарства и массу животного.</string>
+    <string name="error_dosage_mass">Пожалуйста, введите массу животного.</string>
+    <string name="error_dosage_r_concentration_mass">Пожалуйста, введите требуемую дозу, концентрацию лекарства и массу животного.</string>
+    <string name="dosage_result">Доза лекарства: %1$s [мл]</string>
+    <string name="calculate_dosage">Рассчитать дозу лекарства</string>
+    <string name="form_kinetic_energy">Формула кинетической энергии</string>
+    <string name="kinetic">E = Кинетическая энергия</string>
+    <string name="kinetic_mass">m = Масса</string>
+    <string name="kinetic_velocity">v = Скорость</string>
+    <string name="input_kinetic_mass">Введите массу [кг]</string>
+    <string name="input_kinetic_velocity">Введите скорость [м/с]:</string>
+    <string name="error_velocity">Пожалуйста, введите скорость.</string>
+    <string name="error_mass_velocity">Пожалуйста, введите массу и скорость.</string>
+    <string name="kinetic_result">Кинетическая энергия: %1$s [Дж]</string>
+    <string name="calculate_kinetic">Рассчитать кинетическую энергию</string>
+    <string name="form_ohm">Формулы закона Ома</string>
+    <string name="ohm_current">Ток [А]</string>
+    <string name="ohm_resistance">Сопротивление [Ω]</string>
+    <string name="ohm_voltage">Напряжение [В]</string>
+    <string name="error_current">Пожалуйста, введите ток.</string>
+    <string name="error_resistance">Пожалуйста, введите сопротивление.</string>
+    <string name="error_voltage">Пожалуйста, введите напряжение.</string>
+    <string name="error_current_resistance">Пожалуйста, введите ток и сопротивление.</string>
+    <string name="error_voltage_resistance">Пожалуйста, введите напряжение и сопротивление.</string>
+    <string name="error_voltage_current">Пожалуйста, введите напряжение и ток.</string>
+    <string name="result_voltage">Напряжение = %.2f [В]</string>
+    <string name="result_current">Ток = %.2f [А]</string>
+    <string name="result_resistance">Сопротивление = %.2f [Ω]</string>
+    <string name="calculate_ohm">Рассчитать</string>
+    <string name="app_name_autor">VigiForm - Калькулятор</string>
+    <string name="menu">Меню</string>
+    <string name="share_link">Поделиться ссылкой</string>
+    <string name="share">Поделиться</string>
+</resources>
