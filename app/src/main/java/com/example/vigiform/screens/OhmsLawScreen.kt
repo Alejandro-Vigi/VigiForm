@@ -29,7 +29,9 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.material3.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import com.example.vigiform.R
 
 /**
  * ES: OhmsLawScreen es una función composable que permite al usuario calcular diferentes variables de la Ley de Ohm:
@@ -47,11 +49,27 @@ import androidx.compose.ui.text.style.TextAlign
  * the results or specific error messages.
  */
 
+// Ohm error codes
+
+private const val MISSING_CURRENT = "MISSING_CURRENT"
+private const val MISSING_RESISTANCE = "MISSING_RESISTANCE"
+private const val MISSING_VOLTAGE = "MISSING_VOLTAGE"
+private const val MISSING_CURRENT_RESISTANCE = "MISSING_CURRENT_RESISTANCE"
+private const val MISSING_VOLTAGE_RESISTANCE = "MISSING_VOLTAGE_RESISTANCE"
+private const val MISSING_VOLTAGE_CURRENT = "MISSING_VOLTAGE_CURRENT"
+private const val DIVISION_BY_ZERO = "DIVISION_BY_ZERO"
+
 @Composable
 fun OhmsLawScreen() {
+    val formVoltage = stringResource(id = R.string.ohm_one)
+    val formCurrent = stringResource(id = R.string.ohm_two)
+    val resultCurrent = stringResource(id = R.string.result_current)
+    val resultResistance = stringResource(id = R.string.result_resistance)
+    val resultVoltage = stringResource(id = R.string.result_voltage)
+    val formResistance = stringResource(id = R.string.ohm_three)
     val focusManager = LocalFocusManager.current
-    var selectedForm by remember { mutableStateOf("V = I × R") }
-    val forms = listOf("V = I × R", "I = V / R", "R = V / I")
+    var selectedForm by remember { mutableStateOf(formVoltage) }
+    val forms = listOf(formVoltage, formCurrent, formResistance)
     var expanded by remember { mutableStateOf(false) }
     var voltage by remember { mutableStateOf("") }
     var current by remember { mutableStateOf("") }
@@ -68,7 +86,7 @@ fun OhmsLawScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.height(100.dp))
-        Text("Fórmulas Ley de Ohm", fontSize = 24.sp)
+        Text(stringResource(id = R.string.form_ohm), fontSize = 24.sp)
 
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -102,11 +120,11 @@ fun OhmsLawScreen() {
         Spacer(modifier = Modifier.height(30.dp))
 
         when (selectedForm) {
-            "V = I × R" -> {
+            stringResource(id = R.string.ohm_one) -> {
                 TextField(
                     value = current,
                     onValueChange = { if (it.all { c -> c.isDigit() || c == '.' } && it.length <= 8) current = it },
-                    label = { Text("Corriente [A]") },
+                    label = { Text(stringResource(id = R.string.ohm_current)) },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -114,17 +132,17 @@ fun OhmsLawScreen() {
                 TextField(
                     value = resistance,
                     onValueChange = { if (it.all { c -> c.isDigit() || c == '.' } && it.length <= 8) resistance = it },
-                    label = { Text("Resistencia [Ω]") },
+                    label = { Text(stringResource(id = R.string.ohm_resistance)) },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                     modifier = Modifier.fillMaxWidth()
                 )
             }
 
-            "I = V / R" -> {
+            stringResource(id = R.string.ohm_two) -> {
                 TextField(
                     value = voltage,
                     onValueChange = { if (it.all { c -> c.isDigit() || c == '.' } && it.length <= 8 ) voltage = it },
-                    label = { Text("Voltaje [V]") },
+                    label = { Text(stringResource(id = R.string.ohm_voltage)) },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -132,17 +150,17 @@ fun OhmsLawScreen() {
                 TextField(
                     value = resistance,
                     onValueChange = { if (it.all { c -> c.isDigit() || c == '.' } && it.length <= 8) resistance = it },
-                    label = { Text("Resistencia [Ω]") },
+                    label = { Text(stringResource(id = R.string.ohm_resistance)) },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                     modifier = Modifier.fillMaxWidth()
                 )
             }
 
-            "R = V / I" -> {
+            stringResource(id = R.string.ohm_three) -> {
                 TextField(
                     value = voltage,
                     onValueChange = { if (it.all { c -> c.isDigit() || c == '.' } && it.length <= 8) voltage = it },
-                    label = { Text("Voltaje [V]") },
+                    label = { Text(stringResource(id = R.string.ohm_voltage)) },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -150,7 +168,7 @@ fun OhmsLawScreen() {
                 TextField(
                     value = current,
                     onValueChange = { if (it.all { c -> c.isDigit() || c == '.' } && it.length <= 8) current = it },
-                    label = { Text("Corriente [A]") },
+                    label = { Text(stringResource(id = R.string.ohm_current)) },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -160,7 +178,7 @@ fun OhmsLawScreen() {
         Spacer(modifier = Modifier.height(20.dp))
 
         result.let {
-            if (it == "MISSING_CURRENT") {
+            if (it == MISSING_CURRENT) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -168,9 +186,9 @@ fun OhmsLawScreen() {
                         .padding(12.dp),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text("Por favor, ingrese la corriente.")
+                    Text(stringResource(id = R.string.error_current))
                 }
-            } else if (it == "MISSING_RESISTANCE") {
+            } else if (it == MISSING_RESISTANCE) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -178,9 +196,9 @@ fun OhmsLawScreen() {
                         .padding(12.dp),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text("Por favor, ingrese la resistencia.")
+                    Text(stringResource(id = R.string.error_resistance))
                 }
-            } else if (it == "MISSING_VOLTAGE") {
+            } else if (it == MISSING_VOLTAGE) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -188,9 +206,29 @@ fun OhmsLawScreen() {
                         .padding(12.dp),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text("Por favor, ingrese el voltaje.")
+                    Text(stringResource(id = R.string.error_voltage))
                 }
-            } else if (it == "MISSING_CURRENT_RESISTANCE") {
+            } else if (it == MISSING_CURRENT_RESISTANCE) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color(0xFFFFCDD2))
+                        .padding(12.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                Text(stringResource(id = R.string.error_current_resistance))
+                }
+            } else if (it == MISSING_VOLTAGE_RESISTANCE) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color(0xFFFFCDD2))
+                        .padding(12.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(stringResource(id = R.string.error_voltage_resistance))
+                }
+            } else if (it == MISSING_VOLTAGE_CURRENT) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -198,9 +236,9 @@ fun OhmsLawScreen() {
                         .padding(12.dp),
                     contentAlignment = Alignment.Center
                 ) {
-                Text("Por favor, ingrese la corriente y la resistencia.")
+                    Text(stringResource(id = R.string.error_voltage_current))
                 }
-            } else if (it == "MISSING_VOLTAGE_RESISTANCE") {
+            } else if (it == DIVISION_BY_ZERO) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -208,27 +246,7 @@ fun OhmsLawScreen() {
                         .padding(12.dp),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text("Por favor, ingrese el voltaje y la resistencia.")
-                }
-            } else if (it == "MISSING_VOLTAGE_CURRENT") {
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(Color(0xFFFFCDD2)) // Rojo claro
-                        .padding(12.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text("Por favor, ingrese el voltaje y la corriente.")
-                }
-            } else if (it == "DIVISION_BY_ZERO") {
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(Color(0xFFFFCDD2)) // Rojo claro
-                        .padding(12.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text("No se puede dividir entre cero.")
+                    Text(stringResource(id = R.string.division_by_zero))
                 }
             } else if (it.isNotEmpty()) {
                 Text(
@@ -249,39 +267,39 @@ fun OhmsLawScreen() {
                 val resistanceValue = resistance.toFloatOrNull()
 
                 result = when (selectedForm) {
-                    "V = I × R" -> {
+                    formVoltage  -> {
                         when {
-                            current.isBlank() && resistance.isBlank() -> "MISSING_CURRENT_RESISTANCE"
-                            current.isBlank() -> "MISSING_CURRENT"
-                            resistance.isBlank() -> "MISSING_RESISTANCE"
-                            currentValue != null && resistanceValue != null -> "Voltaje = %.2f [V]".format(currentValue * resistanceValue)
-                            else -> "MISSING_CURRENT_RESISTANCE"
+                            current.isBlank() && resistance.isBlank() -> MISSING_CURRENT_RESISTANCE
+                            current.isBlank() -> MISSING_CURRENT
+                            resistance.isBlank() -> MISSING_RESISTANCE
+                            currentValue != null && resistanceValue != null -> resultVoltage.format(currentValue * resistanceValue)
+                            else -> MISSING_CURRENT_RESISTANCE
                         }
                     }
 
-                    "I = V / R" -> {
+                    formCurrent -> {
                         when {
-                            voltage.isBlank() && resistance.isBlank() -> "MISSING_VOLTAGE_RESISTANCE"
-                            voltage.isBlank() -> "MISSING_VOLTAGE"
-                            resistance.isBlank() -> "MISSING_RESISTANCE"
-                            resistanceValue == 0f -> "DIVISION_BY_ZERO"
-                            voltageValue != null && resistanceValue != null -> "Corriente = %.2f [A]".format(
+                            voltage.isBlank() && resistance.isBlank() -> MISSING_VOLTAGE_RESISTANCE
+                            voltage.isBlank() -> MISSING_VOLTAGE
+                            resistance.isBlank() -> MISSING_RESISTANCE
+                            resistanceValue == 0f -> DIVISION_BY_ZERO
+                            voltageValue != null && resistanceValue != null -> resultCurrent.format(
                                 voltageValue.div(resistanceValue)
                             )
-                            else -> "MISSING_VOLTAGE_RESISTANCE"
+                            else -> MISSING_VOLTAGE_RESISTANCE
                         }
                     }
 
-                    "R = V / I" -> {
+                    formResistance -> {
                         when {
-                            voltage.isBlank() && current.isBlank() -> "MISSING_VOLTAGE_CURRENT"
-                            voltage.isBlank() -> "MISSING_VOLTAGE"
-                            current.isBlank() -> "MISSING_CURRENT"
-                            currentValue == 0f -> "DIVISION_BY_ZERO"
-                            voltageValue != null && currentValue != null -> "Resistencia = %.2f [Ω]".format(
+                            voltage.isBlank() && current.isBlank() -> MISSING_VOLTAGE_CURRENT
+                            voltage.isBlank() -> MISSING_VOLTAGE
+                            current.isBlank() -> MISSING_CURRENT
+                            currentValue == 0f -> DIVISION_BY_ZERO
+                            voltageValue != null && currentValue != null -> resultResistance.format(
                                 voltageValue.div(currentValue)
                             )
-                            else -> "MISSING_VOLTAGE_CURRENT"
+                            else -> MISSING_VOLTAGE_CURRENT
                         }
                     }
                     else -> ""
@@ -296,7 +314,7 @@ fun OhmsLawScreen() {
                 .fillMaxWidth()
                 .align(Alignment.CenterHorizontally)
         ) {
-            Text("Calcular")
+            Text(stringResource(id = R.string.calculate_ohm))
         }
     }
 }

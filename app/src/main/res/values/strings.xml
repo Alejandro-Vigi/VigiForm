@@ -92,6 +92,23 @@
     <string name="calculate_kinetic">Calcular Energía Cinética</string>
 
     <!-- OhmsLawScreen.kt-->
+    <string name="form_ohm">Fórmulas Ley de Ohm</string>
+    <string name="ohm_one">V = I × R</string>
+    <string name="ohm_two">I = V / R</string>
+    <string name="ohm_three">R = V / I</string>
+    <string name="ohm_current">Corriente [A]</string>
+    <string name="ohm_resistance">Resistencia [Ω]</string>
+    <string name="ohm_voltage">Voltaje [V]</string>
+    <string name="error_current">Por favor, ingrese la corriente.</string>
+    <string name="error_resistance">Por favor, ingrese la resistencia.</string>
+    <string name="error_voltage">Por favor, ingrese el voltaje.</string>
+    <string name="error_current_resistance">Por favor, ingrese la corriente y la resistencia.</string>
+    <string name="error_voltage_resistance">Por favor, ingrese el voltaje y la resistencia.</string>
+    <string name="error_voltage_current">Por favor, ingrese el voltaje y la corriente.</string>
+    <string name="result_voltage">Voltaje = %.2f [V]</string>
+    <string name="result_current">Corriente = %.2f [A]</string>
+    <string name="result_resistance">Resistencia = %.2f [Ω]</string>
+    <string name="calculate_ohm">Calcular</string>
 
     <!-- MainActivity.kt-->
 
