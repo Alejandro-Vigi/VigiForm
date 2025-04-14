@@ -28,9 +28,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import com.example.vigiform.R
 import java.util.Locale
@@ -98,7 +98,7 @@ fun DensityScreen() {
                         modifier = Modifier
                             .width(40.dp)
                             .padding(vertical = 2.dp), thickness = 2.dp,
-                        color = Color.Black
+                        color = colorResource(id = R.color.black)
                     )
                     Text(text = stringResource(id = R.string.volume_letter), fontSize = 24.sp)
                 }
@@ -178,7 +178,7 @@ fun DensityScreen() {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2))
+                            .background(colorResource(id = R.color.red_error))
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -188,7 +188,7 @@ fun DensityScreen() {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2))
+                            .background(colorResource(id = R.color.red_error))
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -198,7 +198,7 @@ fun DensityScreen() {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2))
+                            .background(colorResource(id = R.color.red_error))
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -208,7 +208,7 @@ fun DensityScreen() {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2))
+                            .background(colorResource(id = R.color.red_error))
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -242,8 +242,8 @@ fun DensityScreen() {
                     }
                 },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(red = 92, green = 67, blue = 128),
-                    contentColor = Color.White
+                    containerColor = colorResource(id = R.color.purple_dark),
+                    contentColor = colorResource(id = R.color.white)
                 ),
                 modifier = Modifier
                     .padding(top = 10.dp)
