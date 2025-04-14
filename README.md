@@ -50,7 +50,7 @@ Las traducciones están organizadas desde el `translations editor` para asegurar
 ## 🎨 Capturas de Pantalla
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b733b730-51e1-4251-8509-74a33daa369f" width="300" alt="Pantalla principal VigiForm">
+  <img src="https://github.com/user-attachments/assets/a48c141f-038b-4f85-a0b5-31cb07a53831" width="300" alt="Pantalla principal VigiForm">
 </p>
 
 ---
