@@ -5,5 +5,5 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="purple_dark">#5c4380</color>
-    <color name="red_error">#5c4380</color>
+    <color name="red_error">#FFCDD2</color>
 </resources>

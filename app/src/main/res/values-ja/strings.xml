@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">VigiForm</string>
     <string name="ohms_law">オームの法則</string>
     <string name="dosage">投薬量</string>
     <string name="kinetic_energy">運動エネルギー</string>
