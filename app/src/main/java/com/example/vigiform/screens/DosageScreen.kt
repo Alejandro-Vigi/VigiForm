@@ -25,9 +25,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -108,7 +108,7 @@ fun DosageScreen() {
                         modifier = Modifier
                             .width(40.dp)
                             .padding(vertical = 2.dp), thickness = 2.dp,
-                        color = Color.Black
+                        color = colorResource(id = R.color.black)
                     )
                     Text(text = stringResource(id = R.string.concentration), fontSize = 24.sp)
                 }
@@ -210,7 +210,7 @@ fun DosageScreen() {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2)) // Rojo claro
+                            .background(colorResource(id = R.color.red_error))
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -220,7 +220,7 @@ fun DosageScreen() {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2))
+                            .background(colorResource(id = R.color.red_error))
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -230,7 +230,7 @@ fun DosageScreen() {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2))
+                            .background(colorResource(id = R.color.red_error))
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -240,7 +240,7 @@ fun DosageScreen() {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2))
+                            .background(colorResource(id = R.color.red_error))
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -250,7 +250,7 @@ fun DosageScreen() {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2))
+                            .background(colorResource(id = R.color.red_error))
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -260,7 +260,7 @@ fun DosageScreen() {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2))
+                            .background(colorResource(id = R.color.red_error))
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -270,7 +270,7 @@ fun DosageScreen() {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2))
+                            .background(colorResource(id = R.color.red_error))
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -280,7 +280,7 @@ fun DosageScreen() {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFFFCDD2))
+                            .background(colorResource(id = R.color.red_error))
                             .padding(12.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -320,8 +320,8 @@ fun DosageScreen() {
                     }
                 },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(red = 92, green = 67, blue = 128),
-                    contentColor = Color.White
+                    containerColor = colorResource(id = R.color.purple_dark),
+                    contentColor = colorResource(id = R.color.white)
                 ),
                 modifier = Modifier
                     .padding(top = 10.dp)
