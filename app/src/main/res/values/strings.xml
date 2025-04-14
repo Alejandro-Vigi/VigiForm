@@ -111,5 +111,10 @@
     <string name="calculate_ohm">Calcular</string>
 
     <!-- MainActivity.kt-->
+    <string name="app_name_autor">VigiForm - Calculadora</string>
+    <string name="menu">Menú</string>
+    <string name="share_link">Compartir enlace</string>
+    <string name="share">Compartir</string>
+    <string name="share_link2">https://github.com/Alejandro-Vigi/VigiForm</string>
 
 </resources>

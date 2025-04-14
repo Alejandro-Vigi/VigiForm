@@ -33,6 +33,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.example.vigiform.navigation.DrawerItems
@@ -62,6 +63,8 @@ fun NavDrawer() {
     val navigationController = rememberNavController()
     val coroutineScope = rememberCoroutineScope()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+    val shareLink = stringResource(id = R.string.share_link)
+    val shareLink2 = stringResource(id = R.string.share_link2)
 
     ModalNavigationDrawer(
         drawerState = drawerState,
@@ -70,7 +73,7 @@ fun NavDrawer() {
             ModalDrawerSheet(
                 modifier = Modifier
                     .width(LocalConfiguration.current.screenWidthDp.dp * 0.6f)
-                    .statusBarsPadding() // Asegura que el drawer se extienda debajo de la barra de estado
+                    .statusBarsPadding()
             ) {
                 Box(
                     modifier = Modifier
@@ -78,7 +81,6 @@ fun NavDrawer() {
                         .height(64.dp)
                         .background(Color(122, 98, 156))
                 ) {
-                    Text(text = "")
                 }
 
                 Spacer(modifier = Modifier.height(20.dp))
@@ -103,7 +105,7 @@ fun NavDrawer() {
                 val coroutineScope = rememberCoroutineScope()
                 TopAppBar(
                     title = {
-                        Text(text = "VigiForm - Calculadora")
+                        Text(text = stringResource(id = R.string.app_name_autor))
                     },
                     navigationIcon = {
                         IconButton(
@@ -115,31 +117,31 @@ fun NavDrawer() {
                         ) {
                             Icon(
                                 Icons.Default.Menu,
-                                contentDescription = "Menú"
+                                contentDescription = stringResource(id = R.string.menu)
                             )
                         }
                     },
                     actions = {
                         val context = LocalContext.current
                         IconButton(onClick = {
-                            val githubLink = "https://github.com/Alejandro-Vigi/VigiForm"
+                            val githubLink = shareLink2
                             val intent = Intent(Intent.ACTION_SEND).apply {
                                 type = "text/plain"
                                 putExtra(Intent.EXTRA_TEXT, githubLink)
                             }
-                            context.startActivity(Intent.createChooser(intent, "Compartir enlace"))
+                            context.startActivity(Intent.createChooser(intent, shareLink))
                         }) {
                             Icon(
                                 imageVector = Icons.Default.Share,
-                                contentDescription = "Compartir"
+                                contentDescription = stringResource(id = R.string.share)
                             )
                         }
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
-                        containerColor = Color(122, 98, 156), // Color de fondo de la TopAppBar
-                        titleContentColor = Color.White, // Color del título
-                        navigationIconContentColor = Color.White, // Color del ícono de navegación
-                        actionIconContentColor = Color.White // Color de los íconos de acciones
+                        containerColor = Color(122, 98, 156),
+                        titleContentColor = Color.White,
+                        navigationIconContentColor = Color.White,
+                        actionIconContentColor = Color.White
                     )
                 )
             }
