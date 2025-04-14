@@ -27,8 +27,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.material3.*
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import com.example.vigiform.R
@@ -94,8 +94,8 @@ fun OhmsLawScreen() {
             Button(
                 onClick = { expanded = true },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(red = 92, green = 67, blue = 128),
-                    contentColor = Color.White
+                    containerColor = colorResource(id = R.color.purple_dark),
+                    contentColor = colorResource(id = R.color.white)
                 )
             ) {
                 Text(selectedForm)
@@ -182,7 +182,7 @@ fun OhmsLawScreen() {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color(0xFFFFCDD2))
+                        .background(colorResource(id = R.color.red_error))
                         .padding(12.dp),
                     contentAlignment = Alignment.Center
                 ) {
@@ -192,7 +192,7 @@ fun OhmsLawScreen() {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color(0xFFFFCDD2))
+                        .background(colorResource(id = R.color.red_error))
                         .padding(12.dp),
                     contentAlignment = Alignment.Center
                 ) {
@@ -202,7 +202,7 @@ fun OhmsLawScreen() {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color(0xFFFFCDD2))
+                        .background(colorResource(id = R.color.red_error))
                         .padding(12.dp),
                     contentAlignment = Alignment.Center
                 ) {
@@ -212,7 +212,7 @@ fun OhmsLawScreen() {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color(0xFFFFCDD2))
+                        .background(colorResource(id = R.color.red_error))
                         .padding(12.dp),
                     contentAlignment = Alignment.Center
                 ) {
@@ -222,7 +222,7 @@ fun OhmsLawScreen() {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color(0xFFFFCDD2))
+                        .background(colorResource(id = R.color.red_error))
                         .padding(12.dp),
                     contentAlignment = Alignment.Center
                 ) {
@@ -232,7 +232,7 @@ fun OhmsLawScreen() {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color(0xFFFFCDD2)) // Rojo claro
+                        .background(colorResource(id = R.color.red_error))
                         .padding(12.dp),
                     contentAlignment = Alignment.Center
                 ) {
@@ -242,7 +242,7 @@ fun OhmsLawScreen() {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color(0xFFFFCDD2)) // Rojo claro
+                        .background(colorResource(id = R.color.red_error))
                         .padding(12.dp),
                     contentAlignment = Alignment.Center
                 ) {
@@ -306,8 +306,8 @@ fun OhmsLawScreen() {
                 }
             },
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(red = 92, green = 67, blue = 128),
-                contentColor = Color.White
+                containerColor = (colorResource(id = R.color.purple_dark)),
+                contentColor = colorResource(id = R.color.white)
             ),
             modifier = Modifier
                 .padding(top = 20.dp)

@@ -31,7 +31,6 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
@@ -140,9 +139,9 @@ fun NavDrawer() {
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
                         containerColor = colorResource(id = R.color.purple_default),
-                        titleContentColor = Color.White,
-                        navigationIconContentColor = Color.White,
-                        actionIconContentColor = Color.White
+                        titleContentColor = colorResource(id = R.color.white),
+                        navigationIconContentColor = colorResource(id = R.color.white),
+                        actionIconContentColor = colorResource(id = R.color.white)
                     )
                 )
             }
