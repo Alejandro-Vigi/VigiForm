@@ -53,53 +53,22 @@ Las traducciones están organizadas desde el `translations editor` para asegurar
 
 ---
 
-## 📁 Estructura del Proyecto
-
-VigiForm/
-├── app/
-│   ├── manifests/
-│   │   └── AndroidManifest.xml
-│   ├── kotlin+java/
-│   │   └── com.example.vigiform/
-│   │       ├── navigation/
-│   │       │   ├── DrawerItems.kt
-│   │       │   ├── icons.kt
-│   │       │   ├── items.kt
-│   │       │   └── NavigationHost.kt
-│   │       ├── Routes.kt
-│   │       ├── screens/
-│   │       │   ├── AboutScreen.kt
-│   │       │   ├── DensityScreen.kt
-│   │       │   ├── DosageScreen.kt
-│   │       │   ├── KineticEnergyScreen.kt
-│   │       │   └── OhmsLawScreen.kt
-│   │       ├── ui.theme/
-│   │       │   ├── Color.kt
-│   │       │   ├── Theme.kt
-│   │       │   └── Type.kt
-│   │       └── MainActivity.kt
-│   ├── (androidTest)/
-│   │   └── com.example.vigiform/
-│   │       └── ExampleInstrumentedTest.kt
-│   └── (test)/
-│       └── com.example.vigiform/
-│           └── ExampleUnitTest.kt
-├── res/
-│   ├── drawable/
-│   │   └── (íconos vectoriales)
-│   ├── mipmap/
-│   │   └── (íconos de launcher)
-│   ├── values/
-│   │   ├── colors.xml
-│   │   ├── ic_launcher_background.xml
-│   │   ├── strings.xml (es)
-│   │   ├── strings.xml (en)
-│   │   ├── strings.xml (ja)
-│   │   ├── strings.xml (ru)
-│   │   └── themes.xml
-│   └── xml/
-│       ├── backup_rules.xml
-│       └── data_extraction_rules.xml
+## 🛠️ Estructura del Proyecto
+```plaintext
+app/
+├── src/
+│   ├── main/
+│   │   ├── java/com/example/vigiform/
+│   │   │   ├── navigation/
+│   │   │   ├── screens/
+│   │   │   ├── theme/
+│   │   │   └── MainActivity.kt
+│   │   └── res/
+│   │       ├── values/
+│   │       ├── values-en/
+│   │       ├── values-ja/
+│   │       └── values-ru/
+├── build.gradle.kts
 └── Gradle Scripts/
     ├── build.gradle.kts (Project: VigiForm)
     └── build.gradle.kts (Module: app)
